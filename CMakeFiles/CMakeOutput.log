@@ -1,0 +1,1736 @@
+The system is: Linux - 3.10.0-1160.114.2.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_11ecd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_11ecd.dir/build.make CMakeFiles/cmTC_11ecd.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_11ecd.dir/testCCompiler.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTC_11ecd.dir/testCCompiler.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_11ecd
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11ecd.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_11ecd.dir/testCCompiler.c.o  -o cmTC_11ecd 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_6fc1f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6fc1f.dir/build.make CMakeFiles/cmTC_6fc1f.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccGrTq7O.s
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o /tmp/ccGrTq7O.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_6fc1f
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fc1f.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o  -o cmTC_6fc1f 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6fc1f' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdONRmW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6fc1f /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6fc1f' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_6fc1f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6fc1f.dir/build.make CMakeFiles/cmTC_6fc1f.dir/build]
+  ignore line: [gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccGrTq7O.s]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o /tmp/ccGrTq7O.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_6fc1f]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fc1f.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o  -o cmTC_6fc1f ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_6fc1f' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdONRmW.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6fc1f /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccdONRmW.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6fc1f] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_6fc1f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_8e5a2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8e5a2.dir/build.make CMakeFiles/cmTC_8e5a2.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8e5a2.dir/testCXXCompiler.cxx.o
+/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTC_8e5a2.dir/testCXXCompiler.cxx.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_8e5a2
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e5a2.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++       -rdynamic CMakeFiles/cmTC_8e5a2.dir/testCXXCompiler.cxx.o  -o cmTC_8e5a2 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_931ff/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_931ff.dir/build.make CMakeFiles/cmTC_931ff.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccLN4gwz.s
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLN4gwz.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_931ff
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_931ff.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_931ff 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_931ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCNOQly.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_931ff /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_931ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/include/c++/7.2.0;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_931ff/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_931ff.dir/build.make CMakeFiles/cmTC_931ff.dir/build]
+  ignore line: [gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccLN4gwz.s]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccLN4gwz.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_931ff]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_931ff.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_931ff ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_931ff' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCNOQly.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_931ff /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccCNOQly.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_931ff] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_931ff.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the function llapi_layout_alloc exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_98cbe/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_98cbe.dir/build.make CMakeFiles/cmTC_98cbe.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98cbe.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc -fPIE   -o CMakeFiles/cmTC_98cbe.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_98cbe
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98cbe.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc    -rdynamic CMakeFiles/cmTC_98cbe.dir/CheckFunctionExists.c.o  -o cmTC_98cbe   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_create exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2427b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2427b.dir/build.make CMakeFiles/cmTC_2427b.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2427b.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_create -fPIE   -o CMakeFiles/cmTC_2427b.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2427b
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2427b.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_create    -rdynamic CMakeFiles/cmTC_2427b.dir/CheckFunctionExists.c.o  -o cmTC_2427b   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_get_stripe exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_e0878/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e0878.dir/build.make CMakeFiles/cmTC_e0878.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e0878.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe -fPIE   -o CMakeFiles/cmTC_e0878.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e0878
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0878.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe    -rdynamic CMakeFiles/cmTC_e0878.dir/CheckFunctionExists.c.o  -o cmTC_e0878   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file byteswap.h exists passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_39150/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_39150.dir/build.make CMakeFiles/cmTC_39150.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_39150.dir/CheckIncludeFile.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -fPIE   -o CMakeFiles/cmTC_39150.dir/CheckIncludeFile.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_39150
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39150.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_39150.dir/CheckIncludeFile.c.o  -o cmTC_39150 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the BZ2_bzCompressInit exist passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_fd937/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fd937.dir/build.make CMakeFiles/cmTC_fd937.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fd937.dir/CheckSymbolExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -fPIE   -o CMakeFiles/cmTC_fd937.dir/CheckSymbolExists.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fd937
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd937.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_fd937.dir/CheckSymbolExists.c.o  -o cmTC_fd937  /usr/lib64/libbz2.so 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+File /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <bzlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef BZ2_bzCompressInit
+  return ((int*)(&BZ2_bzCompressInit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+The system is: Linux - 3.10.0-1160.114.2.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/gcc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/g++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec85288827/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec85288827.dir/build.make CMakeFiles/cmTryCompileExec85288827.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec85288827.dir/testCCompiler.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTryCompileExec85288827.dir/testCCompiler.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec85288827
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec85288827.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc       CMakeFiles/cmTryCompileExec85288827.dir/testCCompiler.c.o  -o cmTryCompileExec85288827 -rdynamic 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3137940422/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3137940422.dir/build.make CMakeFiles/cmTryCompileExec3137940422.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec3137940422
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3137940422.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc     -v CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3137940422 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3137940422' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cck9Jp3G.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3137940422 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3137940422' '-rdynamic' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec3137940422/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3137940422.dir/build.make CMakeFiles/cmTryCompileExec3137940422.dir/build]
+  ignore line: [gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec3137940422]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3137940422.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc     -v CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3137940422 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3137940422' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cck9Jp3G.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3137940422 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cck9Jp3G.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3137940422] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTryCompileExec3137940422.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [c]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec1071089666/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec1071089666.dir/build.make CMakeFiles/cmTryCompileExec1071089666.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1071089666.dir/testCXXCompiler.cxx.o
+/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTryCompileExec1071089666.dir/testCXXCompiler.cxx.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec1071089666
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1071089666.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++        CMakeFiles/cmTryCompileExec1071089666.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec1071089666 -rdynamic 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3777143971/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3777143971.dir/build.make CMakeFiles/cmTryCompileExec3777143971.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec3777143971
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3777143971.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++      -v CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3777143971 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3777143971' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4vfCPg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3777143971 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3777143971' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/gmake "cmTryCompileExec3777143971/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3777143971.dir/build.make CMakeFiles/cmTryCompileExec3777143971.dir/build]
+  ignore line: [gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec3777143971]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3777143971.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++      -v CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec3777143971 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3777143971' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4vfCPg.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTryCompileExec3777143971 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc4vfCPg.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec3777143971] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTryCompileExec3777143971.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+The system is: Linux - 3.10.0-1160.114.2.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_7d5dd/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_7d5dd.dir/build.make CMakeFiles/cmTC_7d5dd.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7d5dd.dir/testCCompiler.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTC_7d5dd.dir/testCCompiler.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_7d5dd
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d5dd.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_7d5dd.dir/testCCompiler.c.o  -o cmTC_7d5dd 
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_2891c/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_2891c.dir/build.make CMakeFiles/cmTC_2891c.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccXqahx6.s
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o /tmp/ccXqahx6.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_2891c
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2891c.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o  -o cmTC_2891c 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2891c' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuWvHDb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2891c /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2891c' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_2891c/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_2891c.dir/build.make CMakeFiles/cmTC_2891c.dir/build]
+  ignore line: [gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccXqahx6.s]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o /tmp/ccXqahx6.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_2891c]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2891c.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o  -o cmTC_2891c ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2891c' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuWvHDb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2891c /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccuWvHDb.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_2891c] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_2891c.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_02e6a/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_02e6a.dir/build.make CMakeFiles/cmTC_02e6a.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_02e6a.dir/testCXXCompiler.cxx.o
+/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTC_02e6a.dir/testCXXCompiler.cxx.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_02e6a
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02e6a.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++       -rdynamic CMakeFiles/cmTC_02e6a.dir/testCXXCompiler.cxx.o  -o cmTC_02e6a 
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_80c61/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_80c61.dir/build.make CMakeFiles/cmTC_80c61.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccJwxDwS.s
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJwxDwS.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_80c61
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80c61.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_80c61 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_80c61' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJzqcHZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_80c61 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_80c61' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/include/c++/7.2.0;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_80c61/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_80c61.dir/build.make CMakeFiles/cmTC_80c61.dir/build]
+  ignore line: [gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccJwxDwS.s]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJwxDwS.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_80c61]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80c61.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_80c61 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_80c61' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJzqcHZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_80c61 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJzqcHZ.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_80c61] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_80c61.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the function llapi_layout_alloc exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_364ce/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_364ce.dir/build.make CMakeFiles/cmTC_364ce.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_364ce.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc -fPIE   -o CMakeFiles/cmTC_364ce.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_364ce
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_364ce.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc    -rdynamic CMakeFiles/cmTC_364ce.dir/CheckFunctionExists.c.o  -o cmTC_364ce   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_create exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_64c19/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_64c19.dir/build.make CMakeFiles/cmTC_64c19.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64c19.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_create -fPIE   -o CMakeFiles/cmTC_64c19.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64c19
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64c19.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_create    -rdynamic CMakeFiles/cmTC_64c19.dir/CheckFunctionExists.c.o  -o cmTC_64c19   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_get_stripe exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d10e0/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d10e0.dir/build.make CMakeFiles/cmTC_d10e0.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d10e0.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe -fPIE   -o CMakeFiles/cmTC_d10e0.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d10e0
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d10e0.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe    -rdynamic CMakeFiles/cmTC_d10e0.dir/CheckFunctionExists.c.o  -o cmTC_d10e0   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file byteswap.h exists passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_3e825/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3e825.dir/build.make CMakeFiles/cmTC_3e825.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e825.dir/CheckIncludeFile.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -fPIE   -o CMakeFiles/cmTC_3e825.dir/CheckIncludeFile.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_3e825
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e825.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_3e825.dir/CheckIncludeFile.c.o  -o cmTC_3e825 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+The system is: Linux - 3.10.0-1160.114.2.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /apps/compiler/gcc/7.2.0/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/3.17.4/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_d9880/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_d9880.dir/build.make CMakeFiles/cmTC_d9880.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d9880.dir/testCCompiler.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc    -o CMakeFiles/cmTC_d9880.dir/testCCompiler.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_d9880
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9880.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_d9880.dir/testCCompiler.c.o  -o cmTC_d9880 
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_ffada/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_ffada.dir/build.make CMakeFiles/cmTC_ffada.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc2BABWz.s
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o /tmp/cc2BABWz.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_ffada
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffada.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o  -o cmTC_ffada 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ffada' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cccocVwv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_ffada /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ffada' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_ffada/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_ffada.dir/build.make CMakeFiles/cmTC_ffada.dir/build]
+  ignore line: [gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc   -v -o CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1 -quiet -v /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc2BABWz.s]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 65b8c7ba63e9c1a322b3ad698975a656]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o /tmp/cc2BABWz.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_ffada]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffada.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/gcc     -v -rdynamic CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o  -o cmTC_ffada ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ffada' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cccocVwv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_ffada /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cccocVwv.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ffada] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_ffada.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_11b47/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_11b47.dir/build.make CMakeFiles/cmTC_11b47.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_11b47.dir/testCXXCompiler.cxx.o
+/apps/compiler/gcc/7.2.0/bin/g++     -o CMakeFiles/cmTC_11b47.dir/testCXXCompiler.cxx.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_11b47
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11b47.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++       -rdynamic CMakeFiles/cmTC_11b47.dir/testCXXCompiler.cxx.o  -o cmTC_11b47 
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a5081/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a5081.dir/build.make CMakeFiles/cmTC_a5081.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccfiVzIt.s
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include
+ /usr/local/include
+ /apps/compiler/gcc/7.2.0/include
+ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed
+ /usr/include
+End of search list.
+GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 7.2.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccfiVzIt.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_a5081
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5081.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a5081 
+Using built-in specs.
+COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++
+COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c,c++,fortran
+Thread model: posix
+gcc version 7.2.0 (GCC) 
+COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a5081' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZbkeyy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a5081 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a5081' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+    add: [/usr/local/include]
+    add: [/apps/compiler/gcc/7.2.0/include]
+    add: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward] ==> [/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/include] ==> [/apps/compiler/gcc/7.2.0/include]
+  collapse include dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/apps/compiler/gcc/7.2.0/include/c++/7.2.0;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/x86_64-pc-linux-gnu;/apps/compiler/gcc/7.2.0/include/c++/7.2.0/backward;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include;/usr/local/include;/apps/compiler/gcc/7.2.0/include;/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake cmTC_a5081/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_a5081.dir/build.make CMakeFiles/cmTC_a5081.dir/build]
+  ignore line: [gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++    -v -o CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus -quiet -v -D_GNU_SOURCE /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccfiVzIt.s]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../x86_64-pc-linux-gnu/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/include]
+  ignore line: [ /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (GCC) version 7.2.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 7.2.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: b7e57b7602a12712b64bfdd2cca570da]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccfiVzIt.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-44.base.el7_9.1]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_a5081]
+  ignore line: [/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5081.dir/link.txt --verbose=1]
+  ignore line: [/apps/compiler/gcc/7.2.0/bin/g++      -v -rdynamic CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_a5081 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/apps/compiler/gcc/7.2.0/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: ../configure --prefix=/apps/compiler/gcc/7.2.0 --with-mpc=/apps/common/mpc/1.1.0 --with-mpfr=/apps/common/mpfr/4.0.1 --with-gmp=/apps/common/gmp/6.1.2 --disable-multilib --enable-languages=c c++ fortran]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 7.2.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a5081' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2 -plugin /apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so -plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZbkeyy.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a5081 /lib/../lib64/crt1.o /lib/../lib64/crti.o /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../.. CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o /lib/../lib64/crtn.o]
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccZbkeyy.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_a5081] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtbegin.o] ==> ignore
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..]
+    arg [CMakeFiles/cmTC_a5081.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0] ==> [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../lib64] ==> [/apps/compiler/gcc/7.2.0/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../..] ==> [/apps/compiler/gcc/7.2.0/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/apps/compiler/gcc/7.2.0/lib/gcc/x86_64-pc-linux-gnu/7.2.0;/apps/compiler/gcc/7.2.0/lib64;/lib64;/usr/lib64;/apps/compiler/gcc/7.2.0/lib]
+  implicit fwks: []
+
+
+Determining if the function llapi_layout_alloc exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_4ab9a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_4ab9a.dir/build.make CMakeFiles/cmTC_4ab9a.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ab9a.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc -fPIE   -o CMakeFiles/cmTC_4ab9a.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4ab9a
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ab9a.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_layout_alloc    -rdynamic CMakeFiles/cmTC_4ab9a.dir/CheckFunctionExists.c.o  -o cmTC_4ab9a   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_create exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_322b4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_322b4.dir/build.make CMakeFiles/cmTC_322b4.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_322b4.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_create -fPIE   -o CMakeFiles/cmTC_322b4.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_322b4
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_322b4.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_create    -rdynamic CMakeFiles/cmTC_322b4.dir/CheckFunctionExists.c.o  -o cmTC_322b4   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function llapi_file_get_stripe exists in the lustreapi passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_66e34/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_66e34.dir/build.make CMakeFiles/cmTC_66e34.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66e34.dir/CheckFunctionExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe -fPIE   -o CMakeFiles/cmTC_66e34.dir/CheckFunctionExists.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_66e34
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66e34.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc  -DCHECK_FUNCTION_EXISTS=llapi_file_get_stripe    -rdynamic CMakeFiles/cmTC_66e34.dir/CheckFunctionExists.c.o  -o cmTC_66e34   -L/usr/lib64/liblustreapi.so  -Wl,-rpath,/usr/lib64/liblustreapi.so -llustreapi 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the include file byteswap.h exists passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_afe5e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_afe5e.dir/build.make CMakeFiles/cmTC_afe5e.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_afe5e.dir/CheckIncludeFile.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -fPIE   -o CMakeFiles/cmTC_afe5e.dir/CheckIncludeFile.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_afe5e
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afe5e.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_afe5e.dir/CheckIncludeFile.c.o  -o cmTC_afe5e 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the BZ2_bzCompressInit exist passed with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_48a2e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_48a2e.dir/build.make CMakeFiles/cmTC_48a2e.dir/build
+gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48a2e.dir/CheckSymbolExists.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc   -fPIE   -o CMakeFiles/cmTC_48a2e.dir/CheckSymbolExists.c.o   -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_48a2e
+/apps/applications/cmake/3.17.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48a2e.dir/link.txt --verbose=1
+/apps/compiler/gcc/7.2.0/bin/gcc      -rdynamic CMakeFiles/cmTC_48a2e.dir/CheckSymbolExists.c.o  -o cmTC_48a2e  /usr/lib64/libbz2.so 
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+File /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <bzlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef BZ2_bzCompressInit
+  return ((int*)(&BZ2_bzCompressInit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

@@ -12,6 +12,22 @@ LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 
 # Configuration Options
 
+
+# Set default build type if not specified
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build." FORCE)
+endif()
+
+# Add debug information to the Debug configuration
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+endif()
+
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+
+
+
 OPTION(ENABLE_XATTRS "Enable code for extended attributes" ON)
 MESSAGE(STATUS "ENABLE_XATTRS: ${ENABLE_XATTRS}")
 IF(ENABLE_XATTRS)
@@ -164,6 +180,7 @@ SET(X_DATADIR ${CMAKE_INSTALL_FULL_DATADIR} CACHE INTERNAL "share")
 SET(X_INCLUDEDIR ${CMAKE_INSTALL_FULL_INCLUDEDIR} CACHE INTERNAL "include")
 SET(X_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR} CACHE INTERNAL "lib")
 
+
 ############
 # This sets an rpath to buildtime libraries in build directory
 # and rewrites the rpath to the install location during install
@@ -189,6 +206,7 @@ LIST(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${CMAKE_INSTALL_PREFIX}/${CM
 IF("${isSystemDir}" STREQUAL "-1")
    SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 ENDIF("${isSystemDir}" STREQUAL "-1")
+
 
 ############
 # End rpath stuff

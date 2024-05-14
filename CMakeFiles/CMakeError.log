@@ -1,0 +1,64 @@
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_56acf/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_56acf.dir/build.make CMakeFiles/cmTC_56acf.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_56acf.dir/test_mpi.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc  -isystem /apps/compiler/gcc/7.2.0/openmpi/3.1.0/include  -fPIE   -pthread -o CMakeFiles/cmTC_56acf.dir/test_mpi.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/FindMPI/test_mpi.c
+/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+gmake[2]: *** [CMakeFiles/cmTC_56acf.dir/test_mpi.c.o] Error 1
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_56acf/fast] Error 2
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+The MPI test test_mpi for CXX in mode normal failed to compile with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_497ae/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_497ae.dir/build.make CMakeFiles/cmTC_497ae.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_497ae.dir/test_mpi.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++   -isystem /apps/compiler/gcc/7.2.0/openmpi/3.1.0/include  -fPIE   -pthread -o CMakeFiles/cmTC_497ae.dir/test_mpi.cpp.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/FindMPI/test_mpi.cpp
+/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+gmake[2]: *** [CMakeFiles/cmTC_497ae.dir/test_mpi.cpp.o] Error 1
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_497ae/fast] Error 2
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_28c82/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_28c82.dir/build.make CMakeFiles/cmTC_28c82.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_28c82.dir/test_mpi.c.o
+/apps/compiler/gcc/7.2.0/bin/gcc  -isystem /apps/compiler/gcc/7.2.0/openmpi/3.1.0/include  -fPIE   -pthread -o CMakeFiles/cmTC_28c82.dir/test_mpi.c.o   -c /apps/applications/cmake/3.17.4/share/cmake-3.17/Modules/FindMPI/test_mpi.c
+/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+gmake[2]: *** [CMakeFiles/cmTC_28c82.dir/test_mpi.c.o] Error 1
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_28c82/fast] Error 2
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+
+The MPI test test_mpi for CXX in mode normal failed to compile with the following output:
+Change Dir: /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_a9049/fast && gmake[1]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_a9049.dir/build.make CMakeFiles/cmTC_a9049.dir/build
+gmake[2]: Entering directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a9049.dir/test_mpi.cpp.o
+/apps/compiler/gcc/7.2.0/bin/g++   -isystem /apps/compiler/gcc/7.2.0/openmpi/3.1.0/include  -fPIE   -pthread -o CMakeFiles/cmTC_a9049.dir/test_mpi.cpp.o -c /scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/FindMPI/test_mpi.cpp
+/apps/compiler/gcc/7.2.0/libexec/gcc/x86_64-pc-linux-gnu/7.2.0/cc1plus: error while loading shared libraries: libmpfr.so.6: cannot open shared object file: No such file or directory
+gmake[2]: *** [CMakeFiles/cmTC_a9049.dir/test_mpi.cpp.o] Error 1
+gmake[2]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_a9049/fast] Error 2
+gmake[1]: Leaving directory `/scratch/s5104a21/mpi_danzer/new/mpifileutils/CMakeFiles/CMakeTmp'
+
+
+

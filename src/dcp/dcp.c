@@ -423,7 +423,6 @@ int main(int argc, char** argv)
     if (daos_args->api != DAOS_API_HDF5) {
         rc = daos_setup(rank, argpaths, numpaths, daos_args, mfu_src_file, mfu_dst_file);
     }
-
 #ifdef HDF5_SUPPORT
     /* if hdf5 API is specified, then h5repack is used */
     if (daos_args->api == DAOS_API_HDF5) {
@@ -468,6 +467,7 @@ int main(int argc, char** argv)
             mfu_param_path_set(argpaths[0], &paths[0], mfu_src_file, true);
             mfu_param_path_set(argpaths[1], &paths[1], mfu_dst_file, false);
         } else {
+	
             mfu_param_path_set_all(numpaths-1, (const char**)argpaths, paths, mfu_src_file, true);
             mfu_param_path_set((const char*)(argpaths[numpaths-1]), destpath, mfu_dst_file, false);
         }
@@ -559,7 +559,6 @@ daos_cleanup:
     /* Cleanup DAOS-related variables, etc. */
     daos_cleanup(daos_args, mfu_src_file, mfu_dst_file);
 #endif
-
     /* free the file list */
     mfu_flist_free(&flist);
 

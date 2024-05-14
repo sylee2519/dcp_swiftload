@@ -1,0 +1,426 @@
+[2024-02-26T00:55:39] Walking /home01/sample_data/nurion_stripe/500mb
+[2024-02-26T00:55:39] Walked 290 items in 0.239 secs (1215.661 items/sec) ...
+[2024-02-26T00:55:39] Walked 290 items in 0.241 seconds (1201.664 items/sec)
+[2024-02-26T00:55:39] Copying to /home01/sample_data/nurion_stripe/500mb2
+[2024-02-26T00:55:39] Items: 290
+[2024-02-26T00:55:39]   Directories: 1
+[2024-02-26T00:55:39]   Files: 289
+[2024-02-26T00:55:39]   Links: 0
+[2024-02-26T00:55:39] Data: 56.250 GiB (199.308 MiB per file)
+[2024-02-26T00:55:39] Creating 1 directories
+[2024-02-26T00:55:39] Original directory exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb' (errno=17 File exists)
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+batch size 0
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+[2024-02-26T00:55:39] Creating 289 files.
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+else right?
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file212' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file141' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file217' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file71' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file153' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file192' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file156' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file31' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file145' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file121' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file276' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file138' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file1' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file147' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file117' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file33' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file79' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file109' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file245' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file93' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file182' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file180' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file174' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file213' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file255' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file221' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file246' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file284' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file196' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file82' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file122' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file198' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file179' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file194' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file178' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file186' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file20' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file155' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file223' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file201' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file168' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file107' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file166' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file132' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file229' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file39' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file177' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file283' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file228' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file98' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file129' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file184' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file57' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file211' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file197' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file183' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file270' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file76' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file83' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file169' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file25' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file267' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file222' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file247' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file287' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file55' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file17' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file191' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file133' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file18' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file87' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file81' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file241' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file225' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file282' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file243' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file150' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file48' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file264' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file38' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file285' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file188' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file189' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file51' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file219' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file144' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file15' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file92' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file167' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file70' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file50' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file12' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file65' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file46' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file111' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file235' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file110' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file16' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file216' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file58' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file52' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file60' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file204' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file10' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file47' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file37' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file162' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file5' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file268' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file161' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file94' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file63' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file251' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file118' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file114' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file3' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file119' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file134' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file80' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file67' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file149' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file140' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file103' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file41' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file96' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file69' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file32' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file91' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file28' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file8' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file95' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file59' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file123' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file62' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file54' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file224' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file260' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file22' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file208' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file200' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file112' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file9' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file252' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file231' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file99' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file101' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file89' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file214' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file88' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file104' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file151' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file210' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/sh_file_make.sh' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file34' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file139' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file45' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file7' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file233' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file100' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file143' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file205' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file85' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file176' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file234' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file84' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file193' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file78' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file13' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file23' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file108' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file215' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file24' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file190' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file248' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file146' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file218' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file181' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file97' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file195' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file40' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file269' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file36' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file135' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file11' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file259' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file56' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file44' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file209' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file207' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file173' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file128' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file272' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file171' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file0' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file152' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file165' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file120' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file29' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file275' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file2' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file280' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file239' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file14' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file49' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file106' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file137' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file249' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file238' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file237' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file75' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file274' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file126' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file72' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file206' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file253' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file157' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file113' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file202' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file42' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file220' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file73' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file27' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file254' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file159' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file116' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file250' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file175' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file187' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file281' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file115' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file68' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file278' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file43' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file279' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file263' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file240' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file226' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file131' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file172' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file77' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file273' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file90' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file142' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file203' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file21' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file26' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file266' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file53' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file286' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file30' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file262' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file230' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file236' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file4' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file158' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file185' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file74' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file136' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file232' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file277' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file130' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file148' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file265' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file244' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file242' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file64' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file154' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file61' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file35' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file6' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file164' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file227' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file170' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file256' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file127' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file102' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file199' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file271' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file86' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file125' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file124' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file66' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file160' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file258' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file261' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file105' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file257' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file163' (errno=17 File exists)
+[2024-02-26T00:55:39] Original file exists, skip the creation: `/home01/sample_data/nurion_stripe/500mb2/500mb/file19' (errno=17 File exists)
+[2024-02-26T00:55:39] Copying data.
+first list size 9
+chunks: 450
+total chunks: 14401
+first list size 11
+chunks: 550
+total chunks: 14401
+first list size 11
+chunks: 550
+total chunks: 14401
+first list size 14
+chunks: 700
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 14
+chunks: 651
+total chunks: 14401
+first list size 11
+chunks: 550
+total chunks: 14401
+first list size 9
+chunks: 450
+total chunks: 14401
+first list size 10
+chunks: 500
+total chunks: 14401
+first list size 14
+chunks: 700
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 14
+chunks: 700
+total chunks: 14401
+first list size 18
+chunks: 900
+total chunks: 14401
+first list size 13
+chunks: 650
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 10
+chunks: 500
+total chunks: 14401
+first list size 14
+chunks: 700
+total chunks: 14401
+first list size 12
+chunks: 600
+total chunks: 14401
+first list size 10
+chunks: 500
+total chunks: 14401
+first list size 14
+chunks: 700
+total chunks: 14401
+first list size 11
+chunks: 550
+total chunks: 14401
+first list size 11
+chunks: 500
+total chunks: 14401
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+-------------------------------------------------------
