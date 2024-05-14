@@ -21,6 +21,173 @@
 #define MFU_IO_USLEEP (100)
 
 static int mpi_rank;
+static catalog_entry_t* catalog_entries = NULL;
+static size_t catalog_entry_count = 0;
+static int catalog_loaded = 0;
+
+static catalog_dir_t* catalog_dirs = NULL;
+static size_t catalog_dir_count = 0;
+static int catalog_dir_loaded = 0;
+
+void load_catalog_if_needed() {
+    if (!catalog_loaded) {
+        const char* catalog_path = "catalog.txt"; // TODO: catalog path 설정
+        catalog_entries = load_catalog(catalog_path, &catalog_entry_count);
+        if (catalog_entries != NULL) {
+            catalog_loaded = 1;
+        }
+    }
+}
+
+void load_catalog_dir_if_needed() {
+    if (!catalog_dir_loaded) {
+        const char* catalog_path = "catalog_dir.txt"; // TODO: catalog path 설정
+        FILE* file = fopen(catalog_path, "r");
+        if (file == NULL) {
+            perror("fopen");
+            return;
+        }
+
+        size_t count = 0;
+        char line[LINE_MAX];
+        while (fgets(line, sizeof(line), file)) {
+            count++;
+        }
+
+        fseek(file, 0, SEEK_SET);
+        catalog_dirs = malloc((count / 2) * sizeof(catalog_dir_t));
+        if (catalog_dirs == NULL) {
+            perror("malloc");
+            fclose(file);
+            return;
+        }
+
+        size_t index = 0;
+        while (fgets(line, sizeof(line), file)) {
+            strncpy(catalog_dirs[index].dir_name, line, PATH_MAX);
+            catalog_dirs[index].dir_name[strcspn(catalog_dirs[index].dir_name, "\n")] = '\0';
+
+            if (fgets(line, sizeof(line), file) == NULL) {
+                break;
+            }
+
+            catalog_dirs[index].entries = malloc(sizeof(char*));
+            catalog_dirs[index].entries[0] = strdup(line);
+            catalog_dirs[index].entries[0][strcspn(catalog_dirs[index].entries[0], "\n")] = '\0';
+            catalog_dirs[index].entry_count = 1;
+            catalog_dirs[index].current_entry = 0;
+
+            index++;
+        }
+
+        fclose(file);
+        catalog_dir_count = count / 2;
+        catalog_loaded = 1;
+    }
+}
+
+catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
+    FILE* file = fopen(catalog_path, "r");
+    if (file == NULL) {
+        perror("fopen");
+        return NULL;
+    }
+
+    size_t count = 0;
+    char line[LINE_MAX];
+    while (fgets(line, sizeof(line), file)) {
+        if (strncmp(line, "lstat", 5) == 0) {
+            count++;
+        }
+    }
+
+    fseek(file, 0, SEEK_SET);
+    catalog_entry_t* entries = malloc(count * sizeof(catalog_entry_t));
+    if (entries == NULL) {
+        perror("malloc");
+        fclose(file);
+        return NULL;
+    }
+
+    size_t index = 0;
+    while (fgets(line, sizeof(line), file)) {
+        if (strncmp(line, "lstat", 5) == 0) {
+            fgets(line, sizeof(line), file);
+            sscanf(line,
+                   "%[^\n]\n"
+                   "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
+                   "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
+                   "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
+                   "st_mtime:%ld;st_ctime:%ld",
+                   entries[index].path,
+                   &entries[index].lstat.st_dev,
+                   &entries[index].lstat.st_ino,
+                   &entries[index].lstat.st_mode,
+                   &entries[index].lstat.st_nlink,
+                   &entries[index].lstat.st_uid,
+                   &entries[index].lstat.st_gid,
+                   &entries[index].lstat.st_rdev,
+                   &entries[index].lstat.st_size,
+                   &entries[index].lstat.st_blksize,
+                   &entries[index].lstat.st_blocks,
+                   &entries[index].lstat.st_atime,
+                   &entries[index].lstat.st_mtime,
+                   &entries[index].lstat.st_ctime);
+            fgets(line, sizeof(line), file); // "stat" 줄을 읽음
+            fgets(line, sizeof(line), file);
+            if (strncmp(line, "None", 4) == 0) {
+                entries[index].has_stat = 0;
+                memcpy(&entries[index].stat, &entries[index].lstat, sizeof(struct stat));
+            } else {
+                entries[index].has_stat = 1;
+                sscanf(line,
+                       "%[^\n]\n"
+                       "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
+                       "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
+                       "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
+                       "st_mtime:%ld;st_ctime:%ld",
+                       entries[index].path,
+                       &entries[index].stat.st_dev,
+                       &entries[index].stat.st_ino,
+                       &entries[index].stat.st_mode,
+                       &entries[index].stat.st_nlink,
+                       &entries[index].stat.st_uid,
+                       &entries[index].stat.st_gid,
+                       &entries[index].stat.st_rdev,
+                       &entries[index].stat.st_size,
+                       &entries[index].stat.st_blksize,
+                       &entries[index].stat.st_blocks,
+                       &entries[index].stat.st_atime,
+                       &entries[index].stat.st_mtime,
+                       &entries[index].stat.st_ctime);
+            }
+            index++;
+        }
+    }
+
+    fclose(file);
+    *out_count = count;
+    return entries;
+}
+
+int compare_catalog_entry(const void* a, const void* b) {
+    return strcmp(((catalog_entry_t*)a)->path, ((catalog_entry_t*)b)->path);
+}
+
+catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, const char* path) {
+    catalog_entry_t key;
+    strncpy(key.path, path, PATH_MAX);
+    return bsearch(&key, entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
+}
+
+catalog_dir_t* find_dir_in_catalog(const char* path) {
+    for (size_t i = 0; i < catalog_dir_count; i++) {
+        if (strcmp(catalog_dirs[i].dir_name, path) == 0) {
+            return &catalog_dirs[i];
+        }
+    }
+    return NULL;
+}
 
 /* calls access, and retries a few times if we get EIO or EINTR */
 int mfu_file_access(const char* path, int amode, mfu_file_t* mfu_file)
@@ -271,6 +438,20 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_stat(const char* path, struct stat* buf) {
+    load_catalog_if_needed();
+
+    if (catalog_loaded) {
+        catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
+        if (entry != NULL) {
+            if (entry->has_stat) {
+                memcpy(buf, &entry->stat, sizeof(struct stat));
+            } else {
+                memcpy(buf, &entry->lstat, sizeof(struct stat));
+            }
+            return 0;
+        }
+    }
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -316,6 +497,16 @@ int daos_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_lstat(const char* path, struct stat* buf) {
+    load_catalog_if_needed();
+
+    if (catalog_loaded) {
+        catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
+        if (entry != NULL) {
+            memcpy(buf, &entry->lstat, sizeof(struct stat));
+            return 0;
+        }
+    }
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1358,6 +1549,13 @@ DIR* daos_opendir(const char* dir, mfu_file_t* mfu_file)
 /* open directory, retry a few times on EINTR or EIO */
 DIR* mfu_opendir(const char* dir)
 {
+    load_catalog_if_needed();
+
+    mfu_catalog_dir_t* mfu_dir = find_dir_in_catalog(dir);
+    if (mfu_dir != NULL) {
+        return (DIR*)mfu_dir;
+    }
+
     DIR* dirp;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1405,6 +1603,10 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 /* close directory, retry a few times on EINTR or EIO */
 int mfu_closedir(DIR* dirp)
 {
+    if ((mfu_catalog_dir_t*)dirp >= (mfu_catalog_dir_t*)catalog_dirs && (mfu_catalog_dir_t*)dirp < (mfu_catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+        return 0;
+    }
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1456,6 +1658,18 @@ struct dirent* daos_readdir(DIR* dirp, mfu_file_t* mfu_file)
 /* read directory entry, retry a few times on ENOENT, EIO, or EINTR */
 struct dirent* mfu_readdir(DIR* dirp)
 {
+    if ((mfu_catalog_dir_t*)dirp >= (mfu_catalog_dir_t*)catalog_dirs && (mfu_catalog_dir_t*)dirp < (mfu_catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+        mfu_catalog_dir_t* mfu_dir = (mfu_catalog_dir_t*)dirp;
+        if (mfu_dir->current_entry < mfu_dir->entry_count) {
+            static struct dirent entry;
+            memset(&entry, 0, sizeof(entry));
+            strncpy(entry.d_name, mfu_dir->entries[mfu_dir->current_entry], sizeof(entry.d_name) - 1);
+            mfu_dir->current_entry++;
+            return &entry;
+        }
+        return NULL;
+    }
+
     /* read next directory entry, retry a few times */
     struct dirent* entry;
     int tries = MFU_IO_TRIES;

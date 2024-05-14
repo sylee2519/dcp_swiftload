@@ -50,9 +50,37 @@ extern "C" {
 /* do this to avoid warning about undefined stat64 struct */
 struct stat64;
 
+
 /*****************************
  * Any object
  ****************************/
+
+#define PATH_MAX 4096
+#define LINE_MAX 8192
+#define MFU_IO_TRIES 3
+#define MFU_IO_USLEEP 1000
+
+typedef struct {
+    char path[PATH_MAX];
+    struct stat lstat;
+    struct stat stat;
+    int has_stat;
+} catalog_entry_t;
+
+typedef struct {
+    char dir_name[PATH_MAX];
+    char** entries;
+    int entry_count;
+    int current_entry;
+} catalog_dir_t;
+
+void load_catalog_if_needed();
+catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count);
+int compare_catalog_entry(const void* a, const void* b);
+catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, const char* path);
+
+void load_catalog_dir_if_needed();
+catalog_dir_t* find_dir_in_catalog(const char* path);
 
 /* calls access, and retries a few times if we get EIO or EINTR */
 int mfu_file_access(const char* path, int amode, mfu_file_t* mfu_file);
