@@ -1,4 +1,5 @@
 import os
+import sys
 
 def encode_dir_entries(directory, catalog_path):
     entries = []
@@ -15,7 +16,11 @@ def encode_dir_entries(directory, catalog_path):
             f.write(f"{root}\n{name}\n")
 
 if __name__ == "__main__":
-    directory = "/path/to/your/directory"  # Change this to the directory you want to encode
-    catalog_path = "catalog_dir.txt"
+    if len(sys.argv) != 3:
+        print(f"Usage: {sys.argv[0]} <directory> <catalog_path>")
+        sys.exit(1)
+
+    directory = sys.argv[1]
+    catalog_path = sys.argv[2]
     encode_dir_entries(directory, catalog_path)
     print(f"Catalog saved to {catalog_path}")

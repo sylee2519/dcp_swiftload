@@ -1,5 +1,6 @@
 import os
 import stat
+import sys
 
 def encode_stat_to_string(path, st):
     return f"{path}\n" \
@@ -42,7 +43,11 @@ def encode_directory_to_catalog(directory, catalog_path):
             f.write(entry)
 
 if __name__ == "__main__":
-    directory = "/path/to/your/directory" # Change this to the directory you want to encode
-    catalog_path = "catalog.txt" # Change this to the path where you want to save the catalog
+    if len(sys.argv) != 3:
+        print(f"Usage: {sys.argv[0]} <directory> <catalog_path>")
+        sys.exit(1)
+
+    directory = sys.argv[1]
+    catalog_path = sys.argv[2]
     encode_directory_to_catalog(directory, catalog_path)
     print(f"Catalog saved to {catalog_path}")
