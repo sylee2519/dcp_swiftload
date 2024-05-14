@@ -443,11 +443,17 @@ int mfu_stat(const char* path, struct stat* buf) {
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
         if (entry != NULL) {
+#ifdef DEBUG
+            printf("mfu_stat: Found %s in catalog\n", path);
+#endif
             if (entry->has_stat) {
                 memcpy(buf, &entry->stat, sizeof(struct stat));
             } else {
                 memcpy(buf, &entry->lstat, sizeof(struct stat));
             }
+#ifdef DEBUG
+            printf("mfu_stat: stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+#endif
             return 0;
         }
     }
@@ -502,7 +508,13 @@ int mfu_lstat(const char* path, struct stat* buf) {
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
         if (entry != NULL) {
+#ifdef DEBUG
+            printf("mfu_lstat: Found %s in catalog\n", path);
+#endif
             memcpy(buf, &entry->lstat, sizeof(struct stat));
+#ifdef DEBUG
+            printf("mfu_lstat: lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+#endif
             return 0;
         }
     }
@@ -1553,6 +1565,9 @@ DIR* mfu_opendir(const char* dir)
 
     mfu_catalog_dir_t* mfu_dir = find_dir_in_catalog(dir);
     if (mfu_dir != NULL) {
+#ifdef DEBUG
+        printf("mfu_opendir: Found directory %s in catalog\n", dir);
+#endif
         return (DIR*)mfu_dir;
     }
 
@@ -1604,6 +1619,9 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 int mfu_closedir(DIR* dirp)
 {
     if ((mfu_catalog_dir_t*)dirp >= (mfu_catalog_dir_t*)catalog_dirs && (mfu_catalog_dir_t*)dirp < (mfu_catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+#ifdef DEBUG
+        printf("mfu_closedir: Closing catalog directory\n");
+#endif
         return 0;
     }
 
@@ -1661,6 +1679,9 @@ struct dirent* mfu_readdir(DIR* dirp)
     if ((mfu_catalog_dir_t*)dirp >= (mfu_catalog_dir_t*)catalog_dirs && (mfu_catalog_dir_t*)dirp < (mfu_catalog_dir_t*)catalog_dirs + catalog_dir_count) {
         mfu_catalog_dir_t* mfu_dir = (mfu_catalog_dir_t*)dirp;
         if (mfu_dir->current_entry < mfu_dir->entry_count) {
+#ifdef DEBUG
+            printf("mfu_readdir: Reading entry %d in catalog directory %s\n", mfu_dir->current_entry, mfu_dir->dir_name);
+#endif
             static struct dirent entry;
             memset(&entry, 0, sizeof(entry));
             strncpy(entry.d_name, mfu_dir->entries[mfu_dir->current_entry], sizeof(entry.d_name) - 1);
