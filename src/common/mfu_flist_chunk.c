@@ -230,8 +230,6 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
                         elem->name             = mfu_flist_file_get_name(list, idx);
                         elem->offset           = off;
 			next_offset = (start+i*ssize)+((j+1)*interval);
-//                        elem->length           = chunk_size;
-                       // elem->interval         = interval;
                         elem->file_size        = file_size;
 			elem->ost	       = ost_idx;
                         elem->rank_of_owner    = rank;
@@ -281,8 +279,6 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
 				if(tail != NULL)
 					tail->next = p;
 				tail= p;
- //                       	counts[dest_rank]++;
-//                        	bytes[dest_rank] += pack_size;	
 			}
 			else{
                         /* append element to list */
@@ -316,8 +312,8 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
  *    *                * with an int, we should be careful we don't overflow */
     int* send_counts = (int*) MFU_MALLOC((size_t)ranks * sizeof(int));
     int* recv_counts = (int*) MFU_MALLOC((size_t)ranks * sizeof(int));
-memset(send_counts, 0, ranks * sizeof(int));
-memset(recv_counts, 0, ranks * sizeof(int));
+    memset(send_counts, 0, ranks * sizeof(int));
+    memset(recv_counts, 0, ranks * sizeof(int));
     /* initialize our send counts */
     for (int i = 0; i < ranks; i++) {
         /* TODO: check that we don't overflow here */
@@ -331,16 +327,16 @@ memset(recv_counts, 0, ranks * sizeof(int));
  *      * receive data from */
     MPI_Alltoall(send_counts, 1, MPI_INT, recv_counts, 1, MPI_INT, MPI_COMM_WORLD);
 
-int total_sends = 0, total_recvs = 0;
-for (int i = 0; i < ranks; i++) {
-    if (send_counts[i] > 0) total_sends++;
-    if (recv_counts[i] > 0) total_recvs++;
+    int total_sends = 0, total_recvs = 0;
+    for (int i = 0; i < ranks; i++) {
+        if (send_counts[i] > 0) total_sends++;
+        if (recv_counts[i] > 0) total_recvs++;
 //	printf("rank %d, from/to rank %d, send_counts %d recv_counts %d \n", rank, i, send_counts[i], recv_counts[i]);
-}
+    }
 
 //sy insert
 
-int total_requests = total_sends + total_recvs;
+    int total_requests = total_sends + total_recvs;
 
     MPI_Request* request = (MPI_Request*) MFU_MALLOC((size_t)total_requests * sizeof(MPI_Request));
     MPI_Status*  status  = (MPI_Status*)  MFU_MALLOC((size_t)total_requests * sizeof(MPI_Status));
@@ -396,10 +392,10 @@ total_requests=req_idx;
         }
 	}
     }
-for(int i =0; i < ranks; i++){
+    for(int i =0; i < ranks; i++){
         int listsize = mfu_file_chunk_list_size(heads[i]);
-//        printf("rank %d to %d list size %d\n", rank,i, listsize);
-}
+    //        printf("rank %d to %d list size %d\n", rank,i, listsize);
+    }
 
         int li = mfu_file_chunk_list_size(head);
 	
@@ -444,7 +440,6 @@ for (int i = 0; i < ranks; i++) {
     }
 }
 
-//total_requests = req_idx;
     /* waitall */
     MPI_Waitall(total_requests, request, status);
 
@@ -522,9 +517,9 @@ for (int i = 0; i < ranks; i++) {
     mfu_free(&bytes);
     mfu_free(&sendbufs);
 
-//mfu_free(&recv_buffers); // Free the array of pointers
+    //mfu_free(&recv_buffers); // Free the array of pointers
     /* free the array for ranks recevied from */
-//    mfu_free(&recvranklist);
+    //mfu_free(&recvranklist);
 
     /* free the request and status messages */
     mfu_free(&request);
