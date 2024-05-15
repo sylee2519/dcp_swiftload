@@ -96,8 +96,10 @@ typedef struct obj_task {
     char path[4096];
     uint64_t start;
     uint64_t end;
+    uint64_t interval;
     uint64_t stripe_size;
     uint64_t file_size;
+    struct obj_task* next;
 } obj_task;
 
 

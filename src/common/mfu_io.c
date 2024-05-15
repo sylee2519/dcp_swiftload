@@ -21,13 +21,14 @@
 #define MFU_IO_USLEEP (100)
 
 static int mpi_rank;
-static catalog_entry_t* catalog_entries = NULL;
-static size_t catalog_entry_count = 0;
-static int catalog_loaded = 0;
 
 static catalog_dir_t* catalog_dirs = NULL;
 static size_t catalog_dir_count = 0;
 static int catalog_dir_loaded = 0;
+
+catalog_entry_t* catalog_entries = NULL;
+size_t catalog_entry_count = 0;
+int catalog_loaded = 0;
 
 void load_catalog_if_needed() {
     if (!catalog_loaded) {
@@ -86,6 +87,8 @@ void load_catalog_dir_if_needed() {
     }
 }
 
+
+
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     FILE* file = fopen(catalog_path, "r");
     if (file == NULL) {
@@ -112,7 +115,141 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     size_t index = 0;
     while (fgets(line, sizeof(line), file)) {
         if (strncmp(line, "lstat", 5) == 0) {
+            printf("1 %s\n", line);
+            fgets(line, sizeof(line), file);  // Read the file path line
+            sscanf(line, "%[^\n]", entries[index].path);
+            printf("2 %s\n", line);
+
+            fgets(line, sizeof(line), file);  // Read the lstat info line
+            printf("3 %s\n", line);
+            sscanf(line,
+                   "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
+                   "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
+                   "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
+                   "st_mtime:%ld;st_ctime:%ld",
+                   &entries[index].lstat.st_dev,
+                   &entries[index].lstat.st_ino,
+                   &entries[index].lstat.st_mode,
+                   &entries[index].lstat.st_nlink,
+                   &entries[index].lstat.st_uid,
+                   &entries[index].lstat.st_gid,
+                   &entries[index].lstat.st_rdev,
+                   &entries[index].lstat.st_size,
+                   &entries[index].lstat.st_blksize,
+                   &entries[index].lstat.st_blocks,
+                   &entries[index].lstat.st_atime,
+                   &entries[index].lstat.st_mtime,
+                   &entries[index].lstat.st_ctime);
+
+            fgets(line, sizeof(line), file);  // Read the "stat" line
+            printf("4 %s\n", line);
+            fgets(line, sizeof(line), file);  // Read the stat info or "None" line
+            sscanf(line, "%[^\n]", entries[index].path);
+            printf("5 %s\n", line);
+            fgets(line, sizeof(line), file);  // Read the stat info or "None" line
+            printf("6 %s\n", line);
+            if (strncmp(line, "None", 4) == 0) {
+                entries[index].has_stat = 0;
+                memcpy(&entries[index].stat, &entries[index].lstat, sizeof(struct stat));
+            } else {
+                entries[index].has_stat = 1;
+                sscanf(line,
+                       "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
+                       "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
+                       "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
+                       "st_mtime:%ld;st_ctime:%ld",
+                       &entries[index].stat.st_dev,
+                       &entries[index].stat.st_ino,
+                       &entries[index].stat.st_mode,
+                       &entries[index].stat.st_nlink,
+                       &entries[index].stat.st_uid,
+                       &entries[index].stat.st_gid,
+                       &entries[index].stat.st_rdev,
+                       &entries[index].stat.st_size,
+                       &entries[index].stat.st_blksize,
+                       &entries[index].stat.st_blocks,
+                       &entries[index].stat.st_atime,
+                       &entries[index].stat.st_mtime,
+                       &entries[index].stat.st_ctime);
+            }
+
+            fgets(line, sizeof(line), file);  // Reading "layout" line
+            printf("7 %s\n", line);
+            fgets(line, sizeof(line), file);  // Reading actual layout or "None"
+            printf("8 %s\n", line);
+            if (strncmp(line, "None", 4) == 0) {
+                entries[index].has_layout = 0;
+            } else {
+                int cnt = 0;
+                entries[index].layout = NULL;
+                entries[index].has_layout = 1;
+                while (strncmp(line, "end", 3) != 0) {
+                    obj_task* new_task = (obj_task*)malloc(sizeof(obj_task));
+                    if (!new_task) {
+                        perror("malloc");
+                        break;
+                    }
+                    sscanf(line,
+                           "%s %d %lu %lu %lu %lu %lu",
+                           new_task->path,
+                           &new_task->ost_idx,
+                           &new_task->start,
+                           &new_task->end,
+                           &new_task->interval,
+                           &new_task->stripe_size,
+                           &new_task->file_size);
+                    cnt++;
+                    new_task->next = entries[index].layout;
+                    entries[index].layout = new_task;
+                    if (!fgets(line, sizeof(line), file)) {
+                        break;
+                    }
+                }
+                entries[index].task_num = cnt;
+            }
+
+            index++;
+        }
+    }
+
+    fclose(file);
+    *out_count = count;
+    return entries;
+}
+
+
+/*
+catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
+    FILE* file = fopen(catalog_path, "r");
+    if (file == NULL) {
+        perror("fopen");
+        return NULL;
+    }
+
+    size_t count = 0;
+    char line[LINE_MAX];
+    while (fgets(line, sizeof(line), file)) {
+        if (strncmp(line, "lstat", 5) == 0) {
+            count++;
+        }
+    }
+
+    fseek(file, 0, SEEK_SET);
+    catalog_entry_t* entries = malloc(count * sizeof(catalog_entry_t));
+    if (entries == NULL) {
+        perror("malloc");
+        fclose(file);
+        return NULL;
+    }
+
+    size_t index = 0;
+    while (fgets(line, sizeof(line), file)) {
+
+            printf("1 %s\n", line);
+        if (strncmp(line, "lstat", 5) == 0) {
             fgets(line, sizeof(line), file);
+
+            printf("2 %s\n", line);
             sscanf(line,
                    "%[^\n]\n"
                    "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
@@ -134,7 +271,9 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
                    &entries[index].lstat.st_mtime,
                    &entries[index].lstat.st_ctime);
             fgets(line, sizeof(line), file); // "stat" 줄을 읽음
-            fgets(line, sizeof(line), file);
+            printf("3 %s\n", line);
+            fgets(line, sizeof(line), file); //
+            printf("4 %s\n", line);
             if (strncmp(line, "None", 4) == 0) {
                 entries[index].has_stat = 0;
                 memcpy(&entries[index].stat, &entries[index].lstat, sizeof(struct stat));
@@ -162,21 +301,39 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
                        &entries[index].stat.st_ctime);
             }
             fgets(line, sizeof(line), file); // reading "layout"
+            printf("5 %s\n", line);
             fgets(line, sizeof(line), file);
+            printf("6 %s\n", line);
             if (strncmp(line, "None", 4) == 0){
                 entries[index].has_layout =0;
             }
             else {
+                int cnt = 0;
+                entries[index].layout = NULL;
                 entries[index].has_layout =1;
-                sscanf(line,
-                       "%[^\n]"
-                       "%lu %lu %lu %lu %lu",
-                       entries[index].layout.path,
-                       &entries[index].layout.ost_idx,
-                       &entries[index].layout.start,
-                       &entries[index].layout.end,
-                       &entries[index].layout.stripe_size,
-                       &entries[index].layout.file_size);
+                while(strncmp(line, "end", 3) != 0){
+                    printf("end\n");
+                    obj_task* new_task = (obj_task*)malloc(sizeof(obj_task));
+                    if (!new_task) {
+                        perror("malloc");
+                    }
+                    sscanf(line,
+                       "%s %d %lu %lu %lu %lu %lu",
+                       new_task->path,
+                       &new_task->ost_idx,
+                       &new_task->start,
+                       &new_task->end,
+                       &new_task->interval,
+                       &new_task->stripe_size,
+                       &new_task->file_size);
+                    cnt++;
+                    new_task->next = entries[index].layout;
+                    entries[index].layout = new_task;
+                    if (!fgets(line, sizeof(line), file)) {
+                        break;
+                    }
+                }
+                entries[index].task_num = cnt;
             }
             
             index++;
@@ -187,7 +344,7 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     *out_count = count;
     return entries;
 }
-
+*/
 int compare_catalog_entry(const void* a, const void* b) {
     return strcmp(((catalog_entry_t*)a)->path, ((catalog_entry_t*)b)->path);
 }

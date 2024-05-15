@@ -1,120 +1,131 @@
 lstat
 /home01/sample_data/nurion_stripe/testdir/file3
-st_dev:2230367650; st_ino:144150826791840369; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840369; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file3
-st_dev:2230367650; st_ino:144150826791840369; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840369; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file3 3 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file4
-st_dev:2230367650; st_ino:144150826791840370; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840370; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file4
-st_dev:2230367650; st_ino:144150826791840370; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840370; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file4 4 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file1
-st_dev:2230367650; st_ino:144150826791840367; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840367; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file1
-st_dev:2230367650; st_ino:144150826791840367; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840367; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file1 1 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file5
-st_dev:2230367650; st_ino:144150826791840371; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840371; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file5
-st_dev:2230367650; st_ino:144150826791840371; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840371; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file5 5 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/make.sh
-st_dev:2230367650; st_ino:144150826791840364; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:350; st_blksize:4194304; st_blocks:8; st_atime:1715741776; st_mtime:1715671639; st_ctime:1715671639
+st_dev:2230367650; st_ino:144150826791840364; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:350; st_blksize:4194304; st_blocks:8; st_atime:1715754003; st_mtime:1715671639; st_ctime:1715671639
 stat
 /home01/sample_data/nurion_stripe/testdir/make.sh
-st_dev:2230367650; st_ino:144150826791840364; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:350; st_blksize:4194304; st_blocks:8; st_atime:1715741776; st_mtime:1715671639; st_ctime:1715671639
+st_dev:2230367650; st_ino:144150826791840364; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:350; st_blksize:4194304; st_blocks:8; st_atime:1715754003; st_mtime:1715671639; st_ctime:1715671639
 layout
 /home01/sample_data/nurion_stripe/testdir/make.sh 4 0 350 1048576 1048576 350
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file8
-st_dev:2230367650; st_ino:144150826791840374; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671642; st_ctime:1715671642
+st_dev:2230367650; st_ino:144150826791840374; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671642; st_ctime:1715671642
 stat
 /home01/sample_data/nurion_stripe/testdir/file8
-st_dev:2230367650; st_ino:144150826791840374; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671642; st_ctime:1715671642
+st_dev:2230367650; st_ino:144150826791840374; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671642; st_ctime:1715671642
 layout
 /home01/sample_data/nurion_stripe/testdir/file8 8 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/sub2
-st_dev:2230367650; st_ino:144150826791840386; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671921; st_ctime:1715671921
+st_dev:2230367650; st_ino:144150826791840386; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671921; st_ctime:1715671921
 stat
 /home01/sample_data/nurion_stripe/testdir/sub2
-st_dev:2230367650; st_ino:144150826791840386; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671921; st_ctime:1715671921
+st_dev:2230367650; st_ino:144150826791840386; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671921; st_ctime:1715671921
 layout
 None
 lstat
 /home01/sample_data/nurion_stripe/testdir/.
-st_dev:2230367650; st_ino:144150826791840355; st_mode:40755; st_nlink:4; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671672; st_ctime:1715671672
+st_dev:2230367650; st_ino:144150826791840355; st_mode:40755; st_nlink:4; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671672; st_ctime:1715671672
 stat
 /home01/sample_data/nurion_stripe/testdir/.
-st_dev:2230367650; st_ino:144150826791840355; st_mode:40755; st_nlink:4; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671672; st_ctime:1715671672
+st_dev:2230367650; st_ino:144150826791840355; st_mode:40755; st_nlink:4; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671672; st_ctime:1715671672
 layout
 None
 lstat
 /home01/sample_data/nurion_stripe/testdir/sub
-st_dev:2230367650; st_ino:144150826791840376; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671668; st_ctime:1715671668
+st_dev:2230367650; st_ino:144150826791840376; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671668; st_ctime:1715671668
 stat
 /home01/sample_data/nurion_stripe/testdir/sub
-st_dev:2230367650; st_ino:144150826791840376; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715741776; st_mtime:1715671668; st_ctime:1715671668
+st_dev:2230367650; st_ino:144150826791840376; st_mode:40755; st_nlink:2; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715754003; st_mtime:1715671668; st_ctime:1715671668
 layout
 None
 lstat
 /home01/sample_data/nurion_stripe/testdir/file2
-st_dev:2230367650; st_ino:144150826791840368; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840368; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file2
-st_dev:2230367650; st_ino:144150826791840368; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840368; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file2 2 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file0
-st_dev:2230367650; st_ino:144150826791840366; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840366; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file0
-st_dev:2230367650; st_ino:144150826791840366; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840366; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file0 0 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file6
-st_dev:2230367650; st_ino:144150826791840372; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840372; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file6
-st_dev:2230367650; st_ino:144150826791840372; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840372; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file6 6 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/..
-st_dev:2230367650; st_ino:144145666036293794; st_mode:40770; st_nlink:50; st_uid:1000138; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715735135; st_mtime:1715741776; st_ctime:1715741776
+st_dev:2230367650; st_ino:144145666036293794; st_mode:40770; st_nlink:49; st_uid:1000138; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715757800; st_mtime:1715754021; st_ctime:1715754021
 stat
 /home01/sample_data/nurion_stripe/testdir/..
-st_dev:2230367650; st_ino:144145666036293794; st_mode:40770; st_nlink:50; st_uid:1000138; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715735135; st_mtime:1715741776; st_ctime:1715741776
+st_dev:2230367650; st_ino:144145666036293794; st_mode:40770; st_nlink:49; st_uid:1000138; st_gid:1000138; st_rdev:0; st_size:4096; st_blksize:4096; st_blocks:16; st_atime:1715757800; st_mtime:1715754021; st_ctime:1715754021
 layout
 None
 lstat
 /home01/sample_data/nurion_stripe/testdir/file9
-st_dev:2230367650; st_ino:144150826791840375; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671642; st_ctime:1715671642
+st_dev:2230367650; st_ino:144150826791840375; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671642; st_ctime:1715671642
 stat
 /home01/sample_data/nurion_stripe/testdir/file9
-st_dev:2230367650; st_ino:144150826791840375; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671642; st_ctime:1715671642
+st_dev:2230367650; st_ino:144150826791840375; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671642; st_ctime:1715671642
 layout
 /home01/sample_data/nurion_stripe/testdir/file9 9 0 1048576 1048576 1048576 1048576
+end
 lstat
 /home01/sample_data/nurion_stripe/testdir/file7
-st_dev:2230367650; st_ino:144150826791840373; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840373; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 stat
 /home01/sample_data/nurion_stripe/testdir/file7
-st_dev:2230367650; st_ino:144150826791840373; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715741776; st_mtime:1715671641; st_ctime:1715671641
+st_dev:2230367650; st_ino:144150826791840373; st_mode:100644; st_nlink:1; st_uid:100013821; st_gid:1000138; st_rdev:0; st_size:1048576; st_blksize:4194304; st_blocks:2048; st_atime:1715754003; st_mtime:1715671641; st_ctime:1715671641
 layout
 /home01/sample_data/nurion_stripe/testdir/file7 7 0 1048576 1048576 1048576 1048576
+end

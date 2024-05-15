@@ -66,9 +66,10 @@ typedef struct {
     char path[PATH_MAX];
     struct stat lstat;
     struct stat stat;
-    obj_task layout;
+    obj_task* layout;
     int has_stat;
     int has_layout;
+    int task_num;
 } catalog_entry_t;
 
 typedef struct {
@@ -77,6 +78,11 @@ typedef struct {
     int entry_count;
     int current_entry;
 } catalog_dir_t;
+
+extern catalog_entry_t* catalog_entries;
+extern size_t catalog_entry_count;
+extern int catalog_loaded;
+
 
 void load_catalog_if_needed();
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count);

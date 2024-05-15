@@ -124,7 +124,7 @@ void process_directory(const char* directory, const char* catalog_path) {
         }
         here_exit:
         llapi_layout_free(layout);
-
+        fprintf(f, "end\n");
 
     }
 
