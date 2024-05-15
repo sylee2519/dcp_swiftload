@@ -85,7 +85,6 @@ void load_catalog_dir_if_needed() {
         catalog_loaded = 1;
     }
 }
-
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     FILE* file = fopen(catalog_path, "r");
     if (file == NULL) {
@@ -161,12 +160,33 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
                        &entries[index].stat.st_mtime,
                        &entries[index].stat.st_ctime);
             }
+
+            // Read layout information
+            entries[index].layout_count = 0;
+            while (fgets(line, sizeof(line), file) && strncmp(line, "end", 3) != 0) {
+                if (strncmp(line, "None", 4) == 0) {
+                    break;
+                }
+                sscanf(line, "%*s %lu %lu %lu %lu %lu %lu",
+                       &entries[index].layout_entries[entries[index].layout_count].idx,
+                       &entries[index].layout_entries[entries[index].layout_count].start,
+                       &entries[index].layout_entries[entries[index].layout_count].end,
+                       &entries[index].layout_entries[entries[index].layout_count].interval,
+                       &entries[index].layout_entries[entries[index].layout_count].size,
+                       &entries[index].layout_entries[entries[index].layout_count].file_size);
+                entries[index].layout_count++;
+            }
+
             index++;
         }
     }
 
     fclose(file);
     *out_count = count;
+
+    // entries를 path 기준으로 정렬
+    qsort(entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
+
     return entries;
 }
 

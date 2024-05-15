@@ -59,12 +59,22 @@ struct stat64;
 #define LINE_MAX 8192
 #define MFU_IO_TRIES 3
 #define MFU_IO_USLEEP 1000
+#define MAX_LAYOUT_ENTRIES 100
 
 typedef struct {
     char path[PATH_MAX];
     struct stat lstat;
     struct stat stat;
     int has_stat;
+    struct {
+        uint64_t idx;
+        uint64_t start;
+        uint64_t end;
+        uint64_t interval;
+        uint64_t size;
+        uint64_t file_size;
+    } layout_entries[MAX_LAYOUT_ENTRIES];
+    size_t layout_count;
 } catalog_entry_t;
 
 typedef struct {
