@@ -97,6 +97,7 @@ typedef struct obj_task {
     uint64_t start;
     uint64_t end;
     uint64_t stripe_size;
+    uint64_t file_size;
 } obj_task;
 
 
