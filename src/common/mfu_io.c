@@ -486,25 +486,25 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_stat(const char* path, struct stat* buf) {
-    load_catalog_if_needed();
+//     load_catalog_if_needed();
 
-    if (catalog_loaded) {
-        catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
-        if (entry != NULL) {
-#ifdef DEBUG
-            printf("mfu_stat: Found %s in catalog\n", path);
-#endif
-            if (entry->has_stat) {
-                memcpy(buf, &entry->stat, sizeof(struct stat));
-            } else {
-                memcpy(buf, &entry->lstat, sizeof(struct stat));
-            }
-#ifdef DEBUG
-            printf("mfu_stat: stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
-#endif
-            return 0;
-        }
-    }
+//     if (catalog_loaded) {
+//         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
+//         if (entry != NULL) {
+// #ifdef DEBUG
+//             printf("mfu_stat: Found %s in catalog\n", path);
+// #endif
+//             if (entry->has_stat) {
+//                 memcpy(buf, &entry->stat, sizeof(struct stat));
+//             } else {
+//                 memcpy(buf, &entry->lstat, sizeof(struct stat));
+//             }
+// #ifdef DEBUG
+//             printf("mfu_stat: stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+// #endif
+//             return 0;
+//         }
+//     }
 
     int rc;
     int tries = MFU_IO_TRIES;
@@ -551,21 +551,21 @@ int daos_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_lstat(const char* path, struct stat* buf) {
-    load_catalog_if_needed();
+//     load_catalog_if_needed();
 
-    if (catalog_loaded) {
-        catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
-        if (entry != NULL) {
-#ifdef DEBUG
-            printf("mfu_lstat: Found %s in catalog\n", path);
-#endif
-            memcpy(buf, &entry->lstat, sizeof(struct stat));
-#ifdef DEBUG
-            printf("mfu_lstat: lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
-#endif
-            return 0;
-        }
-    }
+//     if (catalog_loaded) {
+//         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
+//         if (entry != NULL) {
+// #ifdef DEBUG
+//             printf("mfu_lstat: Found %s in catalog\n", path);
+// #endif
+//             memcpy(buf, &entry->lstat, sizeof(struct stat));
+// #ifdef DEBUG
+//             printf("mfu_lstat: lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+// #endif
+//             return 0;
+//         }
+//     }
 
     int rc;
     int tries = MFU_IO_TRIES;
