@@ -35,62 +35,6 @@ static int map_chunk_to_rank(uint64_t offset, uint64_t cutoff, uint64_t chunks_p
     return rank;
 }
 
-/*
-mfu_file_chunk* mfu_file_chunk_list_alloc_c(mfu_flist list, uint64_t chunk_size, const char* filename)
-{
-    mfu_file_chunk* head = NULL;
-    mfu_file_chunk* tail = NULL;
-
-	    int rank, ranks;
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &ranks);
-	
-	int my_ost_num = OST_NUMBER % ranks;
-
-	FILE* file = fopen(filename, "r");	
-	if (file == NULL) {
-        perror("Failed to open file");
-        return;
-    }
-	if( ranks <= OST_NUMBER){
-	char line[4096];
-	while (fgets(line, sizeof(line), file) != NULL) {
-
-		obj_task chunk;
-        	int scanned = sscanf(line, "%d %255s %lu %lu %lu",
-                             &obj_task.ost_idx, obj_task.path,
-                             &obj_task.start, &obj_task.end, &obj_task.stripe_size, &obj_task.file_size);
-		int remainder = obj_task.ost_idx % ranks; 
-		if (scanned == 5 && remainder == rank) {
-
-			  mfu_file_chunk* p = malloc(sizeof(mfu_file_chunk));
-                          p->next = NULL;
-                          p->name = strdup(obj_task.path);
-                          p->offset = obj_task.start;
-                          p->file_size = obj_task.file_size;
-                          p->length = elem->length;
-                          p->ost = obj_task.ost_idx;
-                          p->rank_of_owner = rank;
-                          p->index_of_owner = idx;
-
-                                if(head == NULL)
-                                        head = p;
-                                if(tail != NULL)
-                                        tail->next = p;
-                                tail= p;
-
-
-			    
-            	}
-				
-		}
-    	}	
-
-    	fclose(file); 
-	}
-
-}
-*/
 
 /* This is a long routine, but the idea is simple.  All tasks sum up
  * the number of file chunks they have, and those are then evenly
@@ -116,28 +60,8 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     uint64_t count = 0;
     uint64_t idx;
     uint64_t size = mfu_flist_size(list);
-    for (idx = 0; idx < size; idx++) {
-        /* get type of item */
-        mfu_filetype type = mfu_flist_file_get_type(list, idx);
 
-        /* if we have a file, add up its chunks */
-        if (type == MFU_TYPE_FILE) {
-            /* get size of file */
-            uint64_t file_size = mfu_flist_file_get_size(list, idx);
-
-            /* compute number of chunks to copy for this file */
-            uint64_t chunks = file_size / chunk_size;
-            if (chunks * chunk_size < file_size || file_size == 0) {
-                /* this accounts for the last chunk, which may be
- *                  * partial or it adds a chunk for 0-size files */
-                chunks++;
-            }
-
-            /* include these chunks in our total */
-            count += chunks;
-        }
-    }
-	printf("rank %d chunks: %d\n", rank, count);
+//	printf("rank %d chunks: %d\n", rank, count);
 
     /* compute total number of chunks across procs */
     uint64_t total;
@@ -397,7 +321,6 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
             } //end of while
             here_exit:
 			    ;		
-
 #endif
         } //if
     } //for

@@ -29,20 +29,13 @@ void encode_stat_to_string(char* buffer, size_t size, const char* path, const st
              (long)st->st_ctime);
 }
 
-void process_directory(const char* directory, const char* catalog_path) {
+void process_directory(const char* directory, const char* catalog_path, FILE* f) {
     DIR* dir;
     struct dirent* entry;
     struct stat statbuf;
     struct stat lstatbuf;
     char path[1024];
     char buffer[2048];
-    FILE* f;
-
-    f = fopen(catalog_path, "w");
-    if (f == NULL) {
-        perror("fopen");
-        return;
-    }
 
     dir = opendir(directory);
     if (dir == NULL) {
@@ -51,6 +44,9 @@ void process_directory(const char* directory, const char* catalog_path) {
     }
 
     while ((entry = readdir(dir)) != NULL) {
+        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+            continue;
+        }
         snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
 
         if (lstat(path, &lstatbuf) == -1) {
@@ -75,6 +71,9 @@ void process_directory(const char* directory, const char* catalog_path) {
         fprintf(f, "layout\n");
         if (!S_ISREG(lstatbuf.st_mode)) {
             fprintf(f, "None\n");
+            if (S_ISDIR(lstatbuf.st_mode)) {
+                process_directory(path, catalog_path, f);
+            }   
             continue;
         }
 
@@ -129,7 +128,6 @@ void process_directory(const char* directory, const char* catalog_path) {
     }
 
     closedir(dir);
-    fclose(f);
 }
 
 int main(int argc, char* argv[]) {
@@ -137,10 +135,17 @@ int main(int argc, char* argv[]) {
         fprintf(stderr, "Usage: %s <directory> <catalog_path>\n", argv[0]);
         return 1;
     }
+    FILE *f;
+       f = fopen(argv[2], "w");
+    if (f == NULL) {
+        perror("fopen");
+        return 0;
+    } 
 
-    process_directory(argv[1], argv[2]);
+    process_directory(argv[1], argv[2], f);
     printf("Catalog saved to %s\n", argv[2]);
 
+    fclose(f);
     return 0;
 }
 

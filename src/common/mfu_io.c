@@ -486,7 +486,7 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_stat(const char* path, struct stat* buf) {
-    load_catalog_if_needed();
+  /*  load_catalog_if_needed();
 
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
@@ -505,7 +505,7 @@ int mfu_stat(const char* path, struct stat* buf) {
             return 0;
         }
     }
-
+*/
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -551,7 +551,7 @@ int daos_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_lstat(const char* path, struct stat* buf) {
-    load_catalog_if_needed();
+/*    load_catalog_if_needed();
 
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
@@ -566,7 +566,7 @@ int mfu_lstat(const char* path, struct stat* buf) {
             return 0;
         }
     }
-
+*/
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1620,6 +1620,9 @@ DIR* mfu_opendir(const char* dir)
         return (DIR*)mfu_dir;
     }
 */
+
+    printf("opendir %s\n", dir);
+
     DIR* dirp;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1731,7 +1734,7 @@ struct dirent* mfu_readdir(DIR* dirp)
 #ifdef DEBUG
             printf("mfu_readdir: Reading entry %d in catalog directory %s\n", mfu_dir->current_entry, mfu_dir->dir_name);
 #endif
-*/            static struct dirent entry;
+            static struct dirent entry;
             memset(&entry, 0, sizeof(entry));
             strncpy(entry.d_name, mfu_dir->entries[mfu_dir->current_entry], sizeof(entry.d_name) - 1);
             mfu_dir->current_entry++;
@@ -1739,7 +1742,7 @@ struct dirent* mfu_readdir(DIR* dirp)
         }
         return NULL;
     }
-
+*/
     /* read next directory entry, retry a few times */
     struct dirent* entry;
     int tries = MFU_IO_TRIES;
