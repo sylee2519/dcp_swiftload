@@ -56,7 +56,7 @@ void load_catalog_dir_if_needed() {
         }
 
         fseek(file, 0, SEEK_SET);
-        catalog_dirs = malloc((count / 2) * sizeof(catalog_dir_t));
+        catalog_dirs = malloc((count) * sizeof(catalog_dir_t));
         if (catalog_dirs == NULL) {
             perror("malloc");
             fclose(file);
@@ -65,12 +65,14 @@ void load_catalog_dir_if_needed() {
 
         size_t index = 0;
         while (fgets(line, sizeof(line), file)) {
-            strncpy(catalog_dirs[index].dir_name, line, PATH_MAX);
-            catalog_dirs[index].dir_name[strcspn(catalog_dirs[index].dir_name, "\n")] = '\0';
+//            strncpy(catalog_dirs[index].dir_name, line, PATH_MAX);
+//            catalog_dirs[index].dir_name[strcspn(catalog_dirs[index].dir_name, "\n")] = '\0';
 
-            if (fgets(line, sizeof(line), file) == NULL) {
-                break;
-            }
+            sscanf(line, "%s", catalog_dirs[index].dir_name);
+
+//            if (fgets(line, sizeof(line), file) == NULL) {
+//                break;
+//            }
 
             catalog_dirs[index].entries = malloc(sizeof(char*));
             catalog_dirs[index].entries[0] = strdup(line);
@@ -82,7 +84,7 @@ void load_catalog_dir_if_needed() {
         }
 
         fclose(file);
-        catalog_dir_count = count / 2;
+        catalog_dir_count = count;
         catalog_loaded = 1;
     }
 }
@@ -115,13 +117,10 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     size_t index = 0;
     while (fgets(line, sizeof(line), file)) {
         if (strncmp(line, "lstat", 5) == 0) {
-            printf("1 %s\n", line);
             fgets(line, sizeof(line), file);  // Read the file path line
             sscanf(line, "%[^\n]", entries[index].path);
-            printf("2 %s\n", line);
 
             fgets(line, sizeof(line), file);  // Read the lstat info line
-            printf("3 %s\n", line);
             sscanf(line,
                    "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
                    "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
@@ -142,12 +141,9 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
                    &entries[index].lstat.st_ctime);
 
             fgets(line, sizeof(line), file);  // Read the "stat" line
-            printf("4 %s\n", line);
             fgets(line, sizeof(line), file);  // Read the stat info or "None" line
             sscanf(line, "%[^\n]", entries[index].path);
-            printf("5 %s\n", line);
             fgets(line, sizeof(line), file);  // Read the stat info or "None" line
-            printf("6 %s\n", line);
             if (strncmp(line, "None", 4) == 0) {
                 entries[index].has_stat = 0;
                 memcpy(&entries[index].stat, &entries[index].lstat, sizeof(struct stat));
@@ -174,9 +170,7 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
             }
 
             fgets(line, sizeof(line), file);  // Reading "layout" line
-            printf("7 %s\n", line);
             fgets(line, sizeof(line), file);  // Reading actual layout or "None"
-            printf("8 %s\n", line);
             if (strncmp(line, "None", 4) == 0) {
                 entries[index].has_layout = 0;
             } else {
@@ -214,137 +208,16 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
 
     fclose(file);
     *out_count = count;
+
+    //entries를 path 기?~@?~\??~\ ?| ~U?| ?
+    qsort(entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
+
+    printf("new_task");
+
     return entries;
 }
 
 
-/*
-catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
-    FILE* file = fopen(catalog_path, "r");
-    if (file == NULL) {
-        perror("fopen");
-        return NULL;
-    }
-
-    size_t count = 0;
-    char line[LINE_MAX];
-    while (fgets(line, sizeof(line), file)) {
-        if (strncmp(line, "lstat", 5) == 0) {
-            count++;
-        }
-    }
-
-    fseek(file, 0, SEEK_SET);
-    catalog_entry_t* entries = malloc(count * sizeof(catalog_entry_t));
-    if (entries == NULL) {
-        perror("malloc");
-        fclose(file);
-        return NULL;
-    }
-
-    size_t index = 0;
-    while (fgets(line, sizeof(line), file)) {
-
-            printf("1 %s\n", line);
-        if (strncmp(line, "lstat", 5) == 0) {
-            fgets(line, sizeof(line), file);
-
-            printf("2 %s\n", line);
-            sscanf(line,
-                   "%[^\n]\n"
-                   "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
-                   "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
-                   "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
-                   "st_mtime:%ld;st_ctime:%ld",
-                   entries[index].path,
-                   &entries[index].lstat.st_dev,
-                   &entries[index].lstat.st_ino,
-                   &entries[index].lstat.st_mode,
-                   &entries[index].lstat.st_nlink,
-                   &entries[index].lstat.st_uid,
-                   &entries[index].lstat.st_gid,
-                   &entries[index].lstat.st_rdev,
-                   &entries[index].lstat.st_size,
-                   &entries[index].lstat.st_blksize,
-                   &entries[index].lstat.st_blocks,
-                   &entries[index].lstat.st_atime,
-                   &entries[index].lstat.st_mtime,
-                   &entries[index].lstat.st_ctime);
-            fgets(line, sizeof(line), file); // "stat" 줄을 읽음
-            printf("3 %s\n", line);
-            fgets(line, sizeof(line), file); //
-            printf("4 %s\n", line);
-            if (strncmp(line, "None", 4) == 0) {
-                entries[index].has_stat = 0;
-                memcpy(&entries[index].stat, &entries[index].lstat, sizeof(struct stat));
-            } else {
-                entries[index].has_stat = 1;
-                sscanf(line,
-                       "%[^\n]\n"
-                       "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
-                       "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
-                       "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
-                       "st_mtime:%ld;st_ctime:%ld",
-                       entries[index].path,
-                       &entries[index].stat.st_dev,
-                       &entries[index].stat.st_ino,
-                       &entries[index].stat.st_mode,
-                       &entries[index].stat.st_nlink,
-                       &entries[index].stat.st_uid,
-                       &entries[index].stat.st_gid,
-                       &entries[index].stat.st_rdev,
-                       &entries[index].stat.st_size,
-                       &entries[index].stat.st_blksize,
-                       &entries[index].stat.st_blocks,
-                       &entries[index].stat.st_atime,
-                       &entries[index].stat.st_mtime,
-                       &entries[index].stat.st_ctime);
-            }
-            fgets(line, sizeof(line), file); // reading "layout"
-            printf("5 %s\n", line);
-            fgets(line, sizeof(line), file);
-            printf("6 %s\n", line);
-            if (strncmp(line, "None", 4) == 0){
-                entries[index].has_layout =0;
-            }
-            else {
-                int cnt = 0;
-                entries[index].layout = NULL;
-                entries[index].has_layout =1;
-                while(strncmp(line, "end", 3) != 0){
-                    printf("end\n");
-                    obj_task* new_task = (obj_task*)malloc(sizeof(obj_task));
-                    if (!new_task) {
-                        perror("malloc");
-                    }
-                    sscanf(line,
-                       "%s %d %lu %lu %lu %lu %lu",
-                       new_task->path,
-                       &new_task->ost_idx,
-                       &new_task->start,
-                       &new_task->end,
-                       &new_task->interval,
-                       &new_task->stripe_size,
-                       &new_task->file_size);
-                    cnt++;
-                    new_task->next = entries[index].layout;
-                    entries[index].layout = new_task;
-                    if (!fgets(line, sizeof(line), file)) {
-                        break;
-                    }
-                }
-                entries[index].task_num = cnt;
-            }
-            
-            index++;
-        }
-    }
-
-    fclose(file);
-    *out_count = count;
-    return entries;
-}
-*/
 int compare_catalog_entry(const void* a, const void* b) {
     return strcmp(((catalog_entry_t*)a)->path, ((catalog_entry_t*)b)->path);
 }
@@ -1736,7 +1609,8 @@ DIR* daos_opendir(const char* dir, mfu_file_t* mfu_file)
 /* open directory, retry a few times on EINTR or EIO */
 DIR* mfu_opendir(const char* dir)
 {
-    load_catalog_if_needed();
+/*
+    load_catalog_dir_if_needed();
 
     catalog_dir_t* mfu_dir = find_dir_in_catalog(dir);
     if (mfu_dir != NULL) {
@@ -1745,7 +1619,7 @@ DIR* mfu_opendir(const char* dir)
 #endif
         return (DIR*)mfu_dir;
     }
-
+*/
     DIR* dirp;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1793,13 +1667,13 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 /* close directory, retry a few times on EINTR or EIO */
 int mfu_closedir(DIR* dirp)
 {
-    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+/*    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
 #ifdef DEBUG
         printf("mfu_closedir: Closing catalog directory\n");
 #endif
         return 0;
     }
-
+*/
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1851,13 +1725,13 @@ struct dirent* daos_readdir(DIR* dirp, mfu_file_t* mfu_file)
 /* read directory entry, retry a few times on ENOENT, EIO, or EINTR */
 struct dirent* mfu_readdir(DIR* dirp)
 {
-    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+/*    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
         catalog_dir_t* mfu_dir = (catalog_dir_t*)dirp;
         if (mfu_dir->current_entry < mfu_dir->entry_count) {
 #ifdef DEBUG
             printf("mfu_readdir: Reading entry %d in catalog directory %s\n", mfu_dir->current_entry, mfu_dir->dir_name);
 #endif
-            static struct dirent entry;
+*/            static struct dirent entry;
             memset(&entry, 0, sizeof(entry));
             strncpy(entry.d_name, mfu_dir->entries[mfu_dir->current_entry], sizeof(entry.d_name) - 1);
             mfu_dir->current_entry++;

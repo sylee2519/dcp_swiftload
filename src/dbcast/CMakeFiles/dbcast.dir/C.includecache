@@ -339,6 +339,8 @@ daos_fs_sys.h
 -
 mfu_param_path.h
 src/common/mfu_param_path.h
+mfu_flist.h
+src/common/mfu_flist.h
 
 src/common/mfu_param_path.h
 stdlib.h

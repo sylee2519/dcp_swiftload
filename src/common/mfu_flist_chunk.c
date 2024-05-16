@@ -151,7 +151,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     if (rank == 0) {
         offset = 0;
     }
-
+    printf("size : %d \n", size);
     /* if we have some chunks, figure out the number of ranks
  *      * we'll send to and the range of rank ids, set flags to 1 */
 
@@ -181,9 +181,11 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
         mfu_filetype type = mfu_flist_file_get_type(list, idx);
 
 
+            printf("name %s\n", mfu_flist_file_get_name(list, idx));
         /* if we have a file, add up its chunks */
         if (type == MFU_TYPE_FILE) {
 
+            printf("file type \n");
             /* get size of file */
             uint64_t file_size = mfu_flist_file_get_size(list, idx);
 
@@ -194,9 +196,11 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
             }
             //	printf("rank %d idx %d # of chunks %d\n", rank, idx, chunks);
 
-
+            printf("catalod_loaded?  %d\n", catalog_loaded);
 #ifdef CATALOG
             load_catalog_if_needed();
+            
+            printf("catalog failed to load\n");
             if (catalog_loaded) {
                 printf("inside catalog loaded\n");        
                 printf("catalog entries %d\n", catalog_entries);        
@@ -215,7 +219,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
                         uint64_t end = task->end;
                         while( offset < end){
 
-                printf("inside while\n");        
+                            printf("inside while\n");        
                             mfu_file_chunk* elem = (mfu_file_chunk*) MFU_MALLOC(sizeof(mfu_file_chunk));
                             elem->name             = mfu_flist_file_get_name(list, idx);
                             elem->offset           = offset;
@@ -396,10 +400,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
 
 #endif
         } //if
-
-
-    } //for loop
-
+    } //for
 
     /* create storage to hold byte counts that we'll send
  *  *      * and receive, it would be best to use uint64_t here
