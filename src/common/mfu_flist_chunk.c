@@ -75,7 +75,9 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     if (rank == 0) {
         offset = 0;
     }
-    // printf("size : %d \n", size);
+#ifdef DEBUG
+    printf("size : %d \n", size);
+#endif
     /* if we have some chunks, figure out the number of ranks
  *      * we'll send to and the range of rank ids, set flags to 1 */
 
@@ -515,7 +517,7 @@ for (int i = 0; i < ranks; i++) {
 //}
 
 	int listsize = mfu_file_chunk_list_size(head);
-	printf("rank %d list size %d\n", rank, listsize);
+	// printf("rank %d list size %d\n", rank, listsize);
     /* free the linked lists, packed send buffers, and related arrays */
     for (int i = 0; i < ranks; i++) {
         mfu_free(&sendbufs[i]);
