@@ -67,7 +67,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     uint64_t total;
     MPI_Allreduce(&count, &total, 1, MPI_UINT64_T, MPI_SUM, MPI_COMM_WORLD);
 
-	printf("total chunks: %d\n", total);
+	// printf("total chunks: %d\n", total);
 
     /* get global offset of our first chunk */
     uint64_t offset;
@@ -75,7 +75,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     if (rank == 0) {
         offset = 0;
     }
-    printf("size : %d \n", size);
+    // printf("size : %d \n", size);
     /* if we have some chunks, figure out the number of ranks
  *      * we'll send to and the range of rank ids, set flags to 1 */
 
@@ -105,11 +105,11 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
         mfu_filetype type = mfu_flist_file_get_type(list, idx);
 
 
-            printf("name %s\n", mfu_flist_file_get_name(list, idx));
+            // printf("name %s\n", mfu_flist_file_get_name(list, idx));
         /* if we have a file, add up its chunks */
         if (type == MFU_TYPE_FILE) {
 
-            printf("file type \n");
+            // printf("file type \n");
             /* get size of file */
             uint64_t file_size = mfu_flist_file_get_size(list, idx);
 
@@ -120,30 +120,30 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
             }
             //	printf("rank %d idx %d # of chunks %d\n", rank, idx, chunks);
 
-            printf("catalod_loaded?  %d\n", catalog_loaded);
+            // printf("catalod_loaded?  %d\n", catalog_loaded);
 #ifdef CATALOG
             load_catalog_if_needed();
             
-            printf("catalog failed to load\n");
+            // printf("catalog failed to load\n");
             if (catalog_loaded) {
-                printf("inside catalog loaded\n");        
-                printf("catalog entries %d\n", catalog_entries);        
-                printf("catalog entry count %d\n", catalog_entry_count);
-                printf("mfu_flist_file_get_name  %s\n", mfu_flist_file_get_name(list, idx));
+                // printf("inside catalog loaded\n");        
+                // printf("catalog entries %d\n", catalog_entries);        
+                // printf("catalog entry count %d\n", catalog_entry_count);
+                // printf("mfu_flist_file_get_name  %s\n", mfu_flist_file_get_name(list, idx));
         
                 catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, mfu_flist_file_get_name(list,idx));   
                 if (entry!= NULL){
                     
-                printf("inside entry not null\n");        
+                // printf("inside entry not null\n");        
                     obj_task* task = entry->layout;
                     for(int i = 0; i < entry->task_num; i++){
 
-                printf("for loop\n");        
+                // printf("for loop\n");        
                         uint64_t offset = task->start;
                         uint64_t end = task->end;
                         while( offset < end){
 
-                            printf("inside while\n");        
+                            // printf("inside while\n");        
                             mfu_file_chunk* elem = (mfu_file_chunk*) MFU_MALLOC(sizeof(mfu_file_chunk));
                             elem->name             = mfu_flist_file_get_name(list, idx);
                             elem->offset           = offset;

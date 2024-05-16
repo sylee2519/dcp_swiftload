@@ -486,7 +486,7 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_stat(const char* path, struct stat* buf) {
-  /*  load_catalog_if_needed();
+    load_catalog_if_needed();
 
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
@@ -505,7 +505,7 @@ int mfu_stat(const char* path, struct stat* buf) {
             return 0;
         }
     }
-*/
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -551,7 +551,7 @@ int daos_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_lstat(const char* path, struct stat* buf) {
-/*    load_catalog_if_needed();
+    load_catalog_if_needed();
 
     if (catalog_loaded) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
@@ -566,7 +566,7 @@ int mfu_lstat(const char* path, struct stat* buf) {
             return 0;
         }
     }
-*/
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
