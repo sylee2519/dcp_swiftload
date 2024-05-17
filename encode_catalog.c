@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <libgen.h>
 #include <lustre/lustreapi.h>
+#include <limits.h>
 
 void encode_stat_to_string(char* buffer, size_t size, const char* path, const struct stat* st) {
     snprintf(buffer, size,
@@ -48,6 +49,12 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
             continue;
         }
         snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
+
+        // 절대 경로를 얻기 위해 realpath를 사용합니다.
+        if (realpath(path, abs_path) == NULL) {
+            perror("realpath");
+            continue;
+        }
 
         if (lstat(path, &lstatbuf) == -1) {
             perror("lstat");
