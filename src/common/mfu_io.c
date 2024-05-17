@@ -263,6 +263,10 @@ catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, c
     catalog_entry_t key;
     strncpy(key.path, path, PATH_MAX);
 #ifdef DEBUG
+    printf("Catalog entries:\n");
+    for (size_t i = 0; i < count; i++) {
+        printf("Entry %zu: %s\n", i, entries[i].path);
+    }
     printf("Searching for: %s\n", key.path);
 #endif
     catalog_entry_t* result = bsearch(&key, entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
@@ -275,7 +279,6 @@ catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, c
 #endif
     return result;
 }
-
 
 catalog_dir_t* find_dir_in_catalog(const char* path) {
     for (size_t i = 0; i < catalog_dir_count; i++) {
