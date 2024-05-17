@@ -20,7 +20,7 @@ def encode_dir_entries(directory, catalog_path):
             f.write(f"{name}\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3):
+    if len(sys.argv) != 3:
         print(f"Usage: {sys.argv[0]} <directory> <catalog_path>")
         sys.exit(1)
 
