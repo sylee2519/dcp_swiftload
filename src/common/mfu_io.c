@@ -76,86 +76,52 @@ void load_catalog_dir_if_needed() {
             return;
         }
 
-        // 1차 스캔: 각 디렉토리의 엔트리 개수를 세기 위한 변수
-        size_t count = 0;
+        size_t dir_count = 0;
         char line[LINE_MAX];
-
-        // DIR_START의 개수를 세어 디렉토리 개수를 파악
         while (fgets(line, sizeof(line), file)) {
             if (strncmp(line, "DIR_START", 9) == 0) {
-                count++;
+                dir_count++;
             }
         }
 
         fseek(file, 0, SEEK_SET);
-        catalog_dirs = malloc(count * sizeof(catalog_dir_t));
+        catalog_dirs = malloc(dir_count * sizeof(catalog_dir_t));
         if (catalog_dirs == NULL) {
             perror("malloc");
             fclose(file);
             return;
         }
 
-        // 초기화
         size_t index = 0;
-        size_t entry_index = 0;
-        size_t* entry_counts = calloc(count, sizeof(size_t));
-        if (entry_counts == NULL) {
-            perror("calloc");
-            free(catalog_dirs);
-            fclose(file);
-            return;
-        }
-
-        // 2차 스캔: 각 디렉토리의 엔트리 개수를 계산
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
-            if (strncmp(line, "DIR_START", 9) == 0) {
-                if (index > 0) {
-                    catalog_dirs[index - 1].entry_count = entry_counts[index - 1];
-                }
-                sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
-                entry_index = 0;
-                index++;
-            } else if (strncmp(line, "DIR_END", 7) == 0) {
-                catalog_dirs[index - 1].entry_count = entry_counts[index - 1];
-            } else {
-                entry_counts[index - 1]++;
-            }
-        }
 
-        // 각 디렉토리에 맞는 엔트리 메모리 할당
-        for (size_t i = 0; i < count; i++) {
-            catalog_dirs[i].entries = malloc(entry_counts[i] * sizeof(char*));
-            if (catalog_dirs[i].entries == NULL) {
-                perror("malloc");
-                for (size_t j = 0; j < i; j++) {
-                    free(catalog_dirs[j].entries);
-                }
-                free(catalog_dirs);
-                free(entry_counts);
-                fclose(file);
-                return;
-            }
-        }
-
-        free(entry_counts);
-        fseek(file, 0, SEEK_SET);
-
-        // 3차 스캔: 실제 데이터 로드
-        index = 0;
-        entry_index = 0;
-        while (fgets(line, sizeof(line), file)) {
-            line[strcspn(line, "\n")] = '\0'; // Remove newline character
             if (strncmp(line, "DIR_START", 9) == 0) {
                 sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
-                entry_index = 0;
+
+                // 엔트리 개수를 계산합니다.
+                size_t entry_count = 0;
+                long pos = ftell(file); // 현재 위치를 저장합니다.
+                while (fgets(line, sizeof(line), file) && strncmp(line, "DIR_END", 7) != 0) {
+                    entry_count++;
+                }
+                fseek(file, pos, SEEK_SET); // 저장한 위치로 돌아갑니다.
+
+                // 실제 엔트리 개수에 맞게 메모리를 할당합니다.
+                catalog_dirs[index].entries = malloc(entry_count * sizeof(char*));
+                if (catalog_dirs[index].entries == NULL) {
+                    perror("malloc");
+                    fclose(file);
+                    return;
+                }
+
+                catalog_dirs[index].entry_count = 0; // 초기화합니다.
                 index++;
             } else if (strncmp(line, "DIR_END", 7) == 0) {
-                catalog_dirs[index - 1].entry_count = entry_index;
-                catalog_dirs[index - 1].current_entry = 0;
+                continue;
             } else {
-                catalog_dirs[index - 1].entries[entry_index] = strdup(line);
-                entry_index++;
+                catalog_dirs[index - 1].entries[catalog_dirs[index - 1].entry_count] = strdup(line);
+                catalog_dirs[index - 1].entry_count++;
             }
         }
 
