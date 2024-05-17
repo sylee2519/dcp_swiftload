@@ -82,7 +82,7 @@ void load_catalog_dir_if_needed() {
         }
 
         fseek(file, 0, SEEK_SET);
-        catalog_dirs = malloc((count) * sizeof(catalog_dir_t));
+        catalog_dirs = malloc((count / 3) * sizeof(catalog_dir_t)); // 각 디렉토리가 3줄을 차지하므로
         if (catalog_dirs == NULL) {
             perror("malloc");
             fclose(file);
@@ -91,6 +91,7 @@ void load_catalog_dir_if_needed() {
 
         size_t index = 0;
         size_t entry_index = 0;
+        char current_dir[LINE_MAX] = "";
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
@@ -98,7 +99,9 @@ void load_catalog_dir_if_needed() {
             log_message("Processing line: %s\n", line);
 #endif
 
-            if (entry_index == 0 || strcmp(catalog_dirs[index - 1].dir_name, line) != 0) {
+            if (strlen(current_dir) == 0 || strcmp(current_dir, line) != 0) {
+                // 새로운 디렉토리 항목을 추가합니다.
+                strcpy(current_dir, line);
                 strcpy(catalog_dirs[index].dir_name, line);
                 catalog_dirs[index].entries = malloc(count * sizeof(char*));
 #ifdef DEBUG
@@ -107,12 +110,22 @@ void load_catalog_dir_if_needed() {
                 entry_index = 0;
                 index++;
             } else {
+                // 파일 또는 디렉토리 항목을 추가합니다.
                 fgets(line, sizeof(line), file);
                 line[strcspn(line, "\n")] = '\0'; // Remove newline character
-                catalog_dirs[index - 1].entries[entry_index] = strdup(line);
+                char entry_name[LINE_MAX];
+                strcpy(entry_name, line);
+
+                fgets(line, sizeof(line), file);
+                line[strcspn(line, "\n")] = '\0'; // Remove newline character
+                char entry_type[LINE_MAX];
+                strcpy(entry_type, line);
+
+                catalog_dirs[index - 1].entries[entry_index] = strdup(entry_name);
 #ifdef DEBUG
-                log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
+                log_message("New %s entry: %s in directory: %s\n", entry_type, entry_name, catalog_dirs[index - 1].dir_name);
 #endif
+
                 entry_index++;
                 catalog_dirs[index - 1].entry_count = entry_index;
                 catalog_dirs[index - 1].current_entry = 0;
@@ -128,6 +141,7 @@ void load_catalog_dir_if_needed() {
 #endif
     }
 }
+
 
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     FILE* file = fopen(catalog_path, "r");
