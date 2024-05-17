@@ -573,8 +573,18 @@ int mfu_lstat(const char* path, struct stat* buf) {
 #endif
             memcpy(buf, &entry->lstat, sizeof(struct stat));
 #ifdef DEBUG
-            printf("mfu_lstat: lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+            printf("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 #endif
+
+            struct stat actual_lstat;
+            if (lstat(path, &actual_lstat) == 0) {
+#ifdef DEBUG
+                printf("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld\n", actual_lstat.st_size, actual_lstat.st_mtime);
+#endif
+                if (buf->st_size != actual_lstat.st_size || buf->st_mtime != actual_lstat.st_mtime) {
+                    raise(SIGUSR1); // 차이가 있을 경우 SIGUSR1 시그널을 보냄
+                }
+            }
             return 0;
         }
     }
@@ -596,6 +606,7 @@ retry:
     }
     return rc;
 }
+
 
 /* calls lstat, and retries a few times if we get EIO or EINTR */
 int mfu_file_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
