@@ -105,6 +105,8 @@ void load_catalog_dir_if_needed() {
 
 
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
+    printf("your in load_catalog\n");
+    log_message("your in load_catalog\n");
     FILE* file = fopen(catalog_path, "r");
     if (file == NULL) {
         perror("fopen");
