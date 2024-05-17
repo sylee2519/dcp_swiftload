@@ -7,16 +7,18 @@
 typedef struct Entry {
     char *name;
     struct Entry *next;
-    struct Entry *sub_entries;
-    int is_dir;
 } Entry;
 
-Entry* create_entry(const char *name, int is_dir) {
+typedef struct DirEntry {
+    char *path;
+    Entry *entries;
+    struct DirEntry *next;
+} DirEntry;
+
+Entry* create_entry(const char *name) {
     Entry *entry = (Entry *)malloc(sizeof(Entry));
     entry->name = strdup(name);
     entry->next = NULL;
-    entry->sub_entries = NULL;
-    entry->is_dir = is_dir;
     return entry;
 }
 
@@ -32,19 +34,46 @@ void add_entry(Entry **list, Entry *entry) {
     }
 }
 
+DirEntry* create_dir_entry(const char *path) {
+    DirEntry *dir_entry = (DirEntry *)malloc(sizeof(DirEntry));
+    dir_entry->path = strdup(path);
+    dir_entry->entries = NULL;
+    dir_entry->next = NULL;
+    return dir_entry;
+}
+
+void add_dir_entry(DirEntry **list, DirEntry *dir_entry) {
+    if (*list == NULL) {
+        *list = dir_entry;
+    } else {
+        DirEntry *temp = *list;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = dir_entry;
+    }
+}
+
 void free_entries(Entry *entry) {
     while (entry) {
         Entry *next = entry->next;
         free(entry->name);
-        if (entry->is_dir) {
-            free_entries(entry->sub_entries);
-        }
         free(entry);
         entry = next;
     }
 }
 
-void scan_directory(const char *directory, Entry **entries) {
+void free_dir_entries(DirEntry *dir_entry) {
+    while (dir_entry) {
+        DirEntry *next = dir_entry->next;
+        free(dir_entry->path);
+        free_entries(dir_entry->entries);
+        free(dir_entry);
+        dir_entry = next;
+    }
+}
+
+void scan_directory(const char *directory, DirEntry **dir_entries) {
     DIR *dir;
     struct dirent *entry;
 
@@ -52,6 +81,8 @@ void scan_directory(const char *directory, Entry **entries) {
         perror("opendir");
         return;
     }
+
+    DirEntry *dir_entry = create_dir_entry(directory);
 
     while ((entry = readdir(dir)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
@@ -62,33 +93,25 @@ void scan_directory(const char *directory, Entry **entries) {
         snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
 
         if (entry->d_type == DT_DIR) {
-            Entry *dir_entry = create_entry(entry->d_name, 1);
-            scan_directory(path, &dir_entry->sub_entries);
-            add_entry(entries, dir_entry);
+            add_entry(&dir_entry->entries, create_entry(entry->d_name));
+            scan_directory(path, dir_entries);
         } else {
-            Entry *file_entry = create_entry(entry->d_name, 0);
-            add_entry(entries, file_entry);
+            add_entry(&dir_entry->entries, create_entry(entry->d_name));
         }
     }
 
+    add_dir_entry(dir_entries, dir_entry);
     closedir(dir);
 }
 
-void write_entries(FILE *catalog, const char *directory, Entry *entries) {
-    fprintf(catalog, "DIR_START %s\n", directory);
-
-    for (Entry *entry = entries; entry != NULL; entry = entry->next) {
-        if (entry->is_dir) {
-            fprintf(catalog, "%s\n", entry->name);
-            char path[1024];
-            snprintf(path, sizeof(path), "%s/%s", directory, entry->name);
-            write_entries(catalog, path, entry->sub_entries);
-        } else {
+void write_entries(FILE *catalog, DirEntry *dir_entries) {
+    for (DirEntry *dir_entry = dir_entries; dir_entry != NULL; dir_entry = dir_entry->next) {
+        fprintf(catalog, "DIR_START %s\n", dir_entry->path);
+        for (Entry *entry = dir_entry->entries; entry != NULL; entry = entry->next) {
             fprintf(catalog, "%s\n", entry->name);
         }
+        fprintf(catalog, "DIR_END\n");
     }
-
-    fprintf(catalog, "DIR_END\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -106,10 +129,10 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    Entry *entries = NULL;
-    scan_directory(directory, &entries);
-    write_entries(catalog, directory, entries);
-    free_entries(entries);
+    DirEntry *dir_entries = NULL;
+    scan_directory(directory, &dir_entries);
+    write_entries(catalog, dir_entries);
+    free_dir_entries(dir_entries);
     fclose(catalog);
 
     printf("Catalog saved to %s\n", catalog_path);
