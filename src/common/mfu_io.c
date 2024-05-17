@@ -117,9 +117,9 @@ void load_catalog_dir_if_needed() {
             } else {
                 // 항목 추가
                 catalog_dirs[index - 1].entries[entry_index] = strdup(line);
-#ifdef DEBUG
-                log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
-#endif
+// #ifdef DEBUG
+//                 log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
+// #endif
                 entry_index++;
             }
         }
