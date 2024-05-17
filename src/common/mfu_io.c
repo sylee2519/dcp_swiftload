@@ -68,7 +68,7 @@ void load_catalog_if_needed() {
 }
 
 void load_catalog_dir_if_needed() {
-    if (!catalog_dir_loaded) {
+    if (!catalog_loaded) {
         const char* catalog_path = "catalog_dir.txt"; // TODO: catalog path 설정
         FILE* file = fopen(catalog_path, "r");
         if (file == NULL) {
@@ -76,8 +76,11 @@ void load_catalog_dir_if_needed() {
             return;
         }
 
+        // 1차 스캔: 각 디렉토리의 엔트리 개수를 세기 위한 변수
         size_t count = 0;
         char line[LINE_MAX];
+
+        // DIR_START의 개수를 세어 디렉토리 개수를 파악
         while (fgets(line, sizeof(line), file)) {
             if (strncmp(line, "DIR_START", 9) == 0) {
                 count++;
@@ -92,34 +95,66 @@ void load_catalog_dir_if_needed() {
             return;
         }
 
+        // 초기화
         size_t index = 0;
         size_t entry_index = 0;
+        size_t* entry_counts = calloc(count, sizeof(size_t));
+        if (entry_counts == NULL) {
+            perror("calloc");
+            free(catalog_dirs);
+            fclose(file);
+            return;
+        }
+
+        // 2차 스캔: 각 디렉토리의 엔트리 개수를 계산
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
-
-// #ifdef DEBUG
-//             log_message("Processing line: %s\n", line);
-// #endif
-
             if (strncmp(line, "DIR_START", 9) == 0) {
-                // 새 디렉토리 항목 추가
+                if (index > 0) {
+                    catalog_dirs[index - 1].entry_count = entry_counts[index - 1];
+                }
                 sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
-                catalog_dirs[index].entries = malloc(count * sizeof(char*));
                 entry_index = 0;
-// #ifdef DEBUG
-//                 log_message("New directory: %s\n", catalog_dirs[index].dir_name);
-// #endif
                 index++;
             } else if (strncmp(line, "DIR_END", 7) == 0) {
-                // 디렉토리 끝
+                catalog_dirs[index - 1].entry_count = entry_counts[index - 1];
+            } else {
+                entry_counts[index - 1]++;
+            }
+        }
+
+        // 각 디렉토리에 맞는 엔트리 메모리 할당
+        for (size_t i = 0; i < count; i++) {
+            catalog_dirs[i].entries = malloc(entry_counts[i] * sizeof(char*));
+            if (catalog_dirs[i].entries == NULL) {
+                perror("malloc");
+                for (size_t j = 0; j < i; j++) {
+                    free(catalog_dirs[j].entries);
+                }
+                free(catalog_dirs);
+                free(entry_counts);
+                fclose(file);
+                return;
+            }
+        }
+
+        free(entry_counts);
+        fseek(file, 0, SEEK_SET);
+
+        // 3차 스캔: 실제 데이터 로드
+        index = 0;
+        entry_index = 0;
+        while (fgets(line, sizeof(line), file)) {
+            line[strcspn(line, "\n")] = '\0'; // Remove newline character
+            if (strncmp(line, "DIR_START", 9) == 0) {
+                sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
+                entry_index = 0;
+                index++;
+            } else if (strncmp(line, "DIR_END", 7) == 0) {
                 catalog_dirs[index - 1].entry_count = entry_index;
                 catalog_dirs[index - 1].current_entry = 0;
             } else {
-                // 항목 추가
                 catalog_dirs[index - 1].entries[entry_index] = strdup(line);
-// #ifdef DEBUG
-//                 log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
-// #endif
                 entry_index++;
             }
         }
