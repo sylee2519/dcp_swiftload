@@ -72,7 +72,7 @@ void load_catalog_dir_if_needed() {
         log_message("load catalog dir if needed\n");
 #endif
 
-    if (!catalog_loaded) {
+    if (!catalog_dir_loaded) {
 #ifdef DEBUG
         log_message("catalog not loaded\n");
 #endif
