@@ -12,11 +12,15 @@ def encode_dir_entries(directory, catalog_path):
     entries.sort()
 
     with open(catalog_path, 'w') as f:
+        prev_root = None
         for root, name in entries:
-            f.write(f"{root}\n{name}\n")
+            if root != prev_root:
+                f.write(f"{root}\n")
+                prev_root = root
+            f.write(f"{name}\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 3):
         print(f"Usage: {sys.argv[0]} <directory> <catalog_path>")
         sys.exit(1)
 

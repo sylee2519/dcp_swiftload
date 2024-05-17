@@ -90,32 +90,44 @@ void load_catalog_dir_if_needed() {
         }
 
         size_t index = 0;
+        size_t entry_index = 0;
         while (fgets(line, sizeof(line), file)) {
-//            strncpy(catalog_dirs[index].dir_name, line, PATH_MAX);
-//            catalog_dirs[index].dir_name[strcspn(catalog_dirs[index].dir_name, "\n")] = '\0';
+            line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
-            sscanf(line, "%s", catalog_dirs[index].dir_name);
+#ifdef DEBUG
+            log_message("Processing line: %s\n", line);
+#endif
 
-//            if (fgets(line, sizeof(line), file) == NULL) {
-//                break;
-//            }
-
-            catalog_dirs[index].entries = malloc(sizeof(char*));
-            catalog_dirs[index].entries[0] = strdup(line);
-            catalog_dirs[index].entries[0][strcspn(catalog_dirs[index].entries[0], "\n")] = '\0';
-            catalog_dirs[index].entry_count = 1;
-            catalog_dirs[index].current_entry = 0;
-
-            index++;
+            if (entry_index == 0 || strcmp(catalog_dirs[index - 1].dir_name, line) != 0) {
+                strcpy(catalog_dirs[index].dir_name, line);
+                catalog_dirs[index].entries = malloc(count * sizeof(char*));
+#ifdef DEBUG
+                log_message("New directory: %s\n", line);
+#endif
+                entry_index = 0;
+                index++;
+            } else {
+                fgets(line, sizeof(line), file);
+                line[strcspn(line, "\n")] = '\0'; // Remove newline character
+                catalog_dirs[index - 1].entries[entry_index] = strdup(line);
+#ifdef DEBUG
+                log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
+#endif
+                entry_index++;
+                catalog_dirs[index - 1].entry_count = entry_index;
+                catalog_dirs[index - 1].current_entry = 0;
+            }
         }
 
         fclose(file);
-        catalog_dir_count = count;
+        catalog_dir_count = index;
         catalog_loaded = 1;
+
+#ifdef DEBUG
+        log_message("Catalog loaded with %zu directories.\n", catalog_dir_count);
+#endif
     }
 }
-
-
 
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     FILE* file = fopen(catalog_path, "r");
@@ -278,11 +290,23 @@ catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, c
 }
 
 catalog_dir_t* find_dir_in_catalog(const char* path) {
+#ifdef DEBUG
+    log_message("Searching for directory: %s\n", path);
+#endif
     for (size_t i = 0; i < catalog_dir_count; i++) {
+#ifdef DEBUG
+        log_message("Comparing with catalog directory: %s\n", catalog_dirs[i].dir_name);
+#endif
         if (strcmp(catalog_dirs[i].dir_name, path) == 0) {
+#ifdef DEBUG
+            log_message("Found directory: %s\n", catalog_dirs[i].dir_name);
+#endif
             return &catalog_dirs[i];
         }
     }
+#ifdef DEBUG
+    log_message("Directory not found: %s\n", path);
+#endif
     return NULL;
 }
 
