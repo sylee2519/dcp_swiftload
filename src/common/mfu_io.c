@@ -1695,21 +1695,20 @@ DIR* daos_opendir(const char* dir, mfu_file_t* mfu_file)
 }
 
 /* open directory, retry a few times on EINTR or EIO */
-DIR* mfu_opendir(const char* dir)
-{
-/*
+DIR* mfu_opendir(const char* dir) {
     load_catalog_dir_if_needed();
 
     catalog_dir_t* mfu_dir = find_dir_in_catalog(dir);
     if (mfu_dir != NULL) {
 #ifdef DEBUG
-        printf("mfu_opendir: Found directory %s in catalog\n", dir);
+        log_message("mfu_opendir: Found directory %s in catalog\n", dir);
 #endif
         return (DIR*)mfu_dir;
     }
-*/
 
-    printf("opendir %s\n", dir);
+#ifdef DEBUG
+    log_message("opendir %s\n", dir);
+#endif
 
     DIR* dirp;
     int tries = MFU_IO_TRIES;
@@ -1756,15 +1755,14 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 }
 
 /* close directory, retry a few times on EINTR or EIO */
-int mfu_closedir(DIR* dirp)
-{
-/*    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+int mfu_closedir(DIR* dirp) {
+    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
 #ifdef DEBUG
-        printf("mfu_closedir: Closing catalog directory\n");
+        log_message("mfu_closedir: Closing catalog directory\n");
 #endif
         return 0;
     }
-*/
+
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1814,13 +1812,12 @@ struct dirent* daos_readdir(DIR* dirp, mfu_file_t* mfu_file)
 }
 
 /* read directory entry, retry a few times on ENOENT, EIO, or EINTR */
-struct dirent* mfu_readdir(DIR* dirp)
-{
-/*    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+struct dirent* mfu_readdir(DIR* dirp) {
+    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
         catalog_dir_t* mfu_dir = (catalog_dir_t*)dirp;
         if (mfu_dir->current_entry < mfu_dir->entry_count) {
 #ifdef DEBUG
-            printf("mfu_readdir: Reading entry %d in catalog directory %s\n", mfu_dir->current_entry, mfu_dir->dir_name);
+            log_message("mfu_readdir: Reading entry %d in catalog directory %s\n", mfu_dir->current_entry, mfu_dir->dir_name);
 #endif
             static struct dirent entry;
             memset(&entry, 0, sizeof(entry));
@@ -1830,7 +1827,7 @@ struct dirent* mfu_readdir(DIR* dirp)
         }
         return NULL;
     }
-*/
+
     /* read next directory entry, retry a few times */
     struct dirent* entry;
     int tries = MFU_IO_TRIES;
