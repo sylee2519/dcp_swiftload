@@ -118,9 +118,6 @@ void load_catalog_dir_if_needed() {
 
 
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
-#ifdef DEBUG
-    log_message("your in load_catalog\n");
-#endif
     FILE* file = fopen(catalog_path, "r");
     if (file == NULL) {
         perror("fopen");
@@ -548,6 +545,11 @@ int mfu_stat(const char* path, struct stat* buf) {
             }
             return 0;
         }
+        else {
+#ifdef DEBUG
+            log_message("mfu_stat: %s not found in catalog\n", path);
+#endif
+        }
     }
 
     int rc;
@@ -622,6 +624,11 @@ int mfu_lstat(const char* path, struct stat* buf) {
                 }
             }
             return 0;
+        }
+        else {
+#ifdef DEBUG
+            log_message("mfu_lstat: %s not found in catalog\n", path);
+#endif
         }
     }
 
