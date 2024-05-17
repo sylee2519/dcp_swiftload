@@ -83,6 +83,7 @@ void scan_directory(const char *directory, DirEntry **dir_entries) {
     }
 
     DirEntry *dir_entry = create_dir_entry(directory);
+    add_dir_entry(dir_entries, dir_entry);
 
     while ((entry = readdir(dir)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
@@ -100,7 +101,6 @@ void scan_directory(const char *directory, DirEntry **dir_entries) {
         }
     }
 
-    add_dir_entry(dir_entries, dir_entry);
     closedir(dir);
 }
 
