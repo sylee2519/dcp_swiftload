@@ -148,23 +148,23 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
 
             fgets(line, sizeof(line), file);  // Read the lstat info line
             sscanf(line,
-                   "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
-                   "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
-                   "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
-                   "st_mtime:%ld;st_ctime:%ld",
-                   &entries[index].lstat.st_dev,
-                   &entries[index].lstat.st_ino,
-                   &entries[index].lstat.st_mode,
-                   &entries[index].lstat.st_nlink,
-                   &entries[index].lstat.st_uid,
-                   &entries[index].lstat.st_gid,
-                   &entries[index].lstat.st_rdev,
-                   &entries[index].lstat.st_size,
-                   &entries[index].lstat.st_blksize,
-                   &entries[index].lstat.st_blocks,
-                   &entries[index].lstat.st_atime,
-                   &entries[index].lstat.st_mtime,
-                   &entries[index].lstat.st_ctime);
+                    "st_dev:%lu; st_ino:%lu; st_mode:%u; st_nlink:%lu; "
+                    "st_uid:%u; st_gid:%u; st_rdev:%lu; st_size:%ld; "
+                    "st_blksize:%ld; st_blocks:%ld; st_atime:%ld; "
+                    "st_mtime:%ld; st_ctime:%ld",
+                    &entries[index].lstat.st_dev,
+                    &entries[index].lstat.st_ino,
+                    &entries[index].lstat.st_mode,
+                    &entries[index].lstat.st_nlink,
+                    &entries[index].lstat.st_uid,
+                    &entries[index].lstat.st_gid,
+                    &entries[index].lstat.st_rdev,
+                    &entries[index].lstat.st_size,
+                    &entries[index].lstat.st_blksize,
+                    &entries[index].lstat.st_blocks,
+                    &entries[index].lstat.st_atime,
+                    &entries[index].lstat.st_mtime,
+                    &entries[index].lstat.st_ctime);
 
             fgets(line, sizeof(line), file);  // Read the "stat" line
             fgets(line, sizeof(line), file);  // Read the stat info or "None" line
@@ -176,23 +176,23 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
             } else {
                 entries[index].has_stat = 1;
                 sscanf(line,
-                       "st_dev:%lu;st_ino:%lu;st_mode:%u;st_nlink:%lu;"
-                       "st_uid:%u;st_gid:%u;st_rdev:%lu;st_size:%ld;"
-                       "st_blksize:%ld;st_blocks:%ld;st_atime:%ld;"
-                       "st_mtime:%ld;st_ctime:%ld",
-                       &entries[index].stat.st_dev,
-                       &entries[index].stat.st_ino,
-                       &entries[index].stat.st_mode,
-                       &entries[index].stat.st_nlink,
-                       &entries[index].stat.st_uid,
-                       &entries[index].stat.st_gid,
-                       &entries[index].stat.st_rdev,
-                       &entries[index].stat.st_size,
-                       &entries[index].stat.st_blksize,
-                       &entries[index].stat.st_blocks,
-                       &entries[index].stat.st_atime,
-                       &entries[index].stat.st_mtime,
-                       &entries[index].stat.st_ctime);
+                        "st_dev:%lu; st_ino:%lu; st_mode:%u; st_nlink:%lu; "
+                        "st_uid:%u; st_gid:%u; st_rdev:%lu; st_size:%ld; "
+                        "st_blksize:%ld; st_blocks:%ld; st_atime:%ld; "
+                        "st_mtime:%ld; st_ctime:%ld",
+                        &entries[index].stat.st_dev,
+                        &entries[index].stat.st_ino,
+                        &entries[index].stat.st_mode,
+                        &entries[index].stat.st_nlink,
+                        &entries[index].stat.st_uid,
+                        &entries[index].stat.st_gid,
+                        &entries[index].stat.st_rdev,
+                        &entries[index].stat.st_size,
+                        &entries[index].stat.st_blksize,
+                        &entries[index].stat.st_blocks,
+                        &entries[index].stat.st_atime,
+                        &entries[index].stat.st_mtime,
+                        &entries[index].stat.st_ctime);
             }
 
             fgets(line, sizeof(line), file);  // Reading "layout" line
