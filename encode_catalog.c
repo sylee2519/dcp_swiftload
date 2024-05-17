@@ -35,7 +35,8 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
     struct dirent* entry;
     struct stat statbuf;
     struct stat lstatbuf;
-    char path[1024];
+    char path[PATH_MAX];
+    char abs_path[PATH_MAX];
     char buffer[2048];
 
     dir = opendir(directory);
