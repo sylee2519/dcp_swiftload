@@ -235,21 +235,21 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     fclose(file);
     *out_count = count;
 
-#ifdef DEBUG
-    printf("Before sorting:\n");
-    for (size_t i = 0; i < count; i++) {
-        printf("%s\n", entries[i].path);
-    }
-#endif
+// #ifdef DEBUG
+//     printf("Before sorting:\n");
+//     for (size_t i = 0; i < count; i++) {
+//         printf("%s\n", entries[i].path);
+//     }
+// #endif
 
     qsort(entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
 
-#ifdef DEBUG
-    printf("After sorting:\n");
-    for (size_t i = 0; i < count; i++) {
-        printf("%s\n", entries[i].path);
-    }
-#endif
+// #ifdef DEBUG
+//     printf("After sorting:\n");
+//     for (size_t i = 0; i < count; i++) {
+//         printf("%s\n", entries[i].path);
+//     }
+// #endif
 
     return entries;
 }
@@ -262,8 +262,20 @@ int compare_catalog_entry(const void* a, const void* b) {
 catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, const char* path) {
     catalog_entry_t key;
     strncpy(key.path, path, PATH_MAX);
-    return bsearch(&key, entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
+#ifdef DEBUG
+    printf("Searching for: %s\n", key.path);
+#endif
+    catalog_entry_t* result = bsearch(&key, entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
+#ifdef DEBUG
+    if (result) {
+        printf("Found entry for: %s\n", result->path);
+    } else {
+        printf("Entry not found for: %s\n", key.path);
+    }
+#endif
+    return result;
 }
+
 
 catalog_dir_t* find_dir_in_catalog(const char* path) {
     for (size_t i = 0; i < catalog_dir_count; i++) {
