@@ -73,29 +73,21 @@ void free_dir_entries(DirEntry *dir_entry) {
     }
 }
 
-int compare_entries(const void *a, const void *b) {
-    struct dirent **entry_a = (struct dirent **)a;
-    struct dirent **entry_b = (struct dirent **)b;
-    return strcmp((*entry_a)->d_name, (*entry_b)->d_name);
-}
-
 void scan_directory(const char *directory, DirEntry **dir_entries) {
     DIR *dir;
-    struct dirent **namelist;
-    int n;
+    struct dirent *entry;
 
-    if ((n = scandir(directory, &namelist, NULL, alphasort)) == -1) {
-        perror("scandir");
+    dir = opendir(directory);
+    if (dir == NULL) {
+        perror("opendir");
         return;
     }
 
     DirEntry *dir_entry = create_dir_entry(directory);
     add_dir_entry(dir_entries, dir_entry);
 
-    for (int i = 0; i < n; i++) {
-        struct dirent *entry = namelist[i];
+    while ((entry = readdir(dir)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
-            free(namelist[i]);
             continue;
         }
 
@@ -108,11 +100,9 @@ void scan_directory(const char *directory, DirEntry **dir_entries) {
         } else {
             add_entry(&dir_entry->entries, create_entry(entry->d_name));
         }
-
-        free(namelist[i]);
     }
 
-    free(namelist);
+    closedir(dir);
 }
 
 void write_entries(FILE *catalog, DirEntry *dir_entries) {
