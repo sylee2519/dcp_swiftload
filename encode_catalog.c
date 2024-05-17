@@ -13,14 +13,14 @@
 void encode_stat_to_string(char* buffer, size_t size, const char* path, const struct stat* st) {
     snprintf(buffer, size,
              "%s\n"
-             "st_dev:%ld; st_ino:%ld; st_mode:%o; st_nlink:%ld; st_uid:%d; st_gid:%d; st_rdev:%ld; st_size:%ld; st_blksize:%ld; st_blocks:%ld; st_atime:%ld; st_mtime:%ld; st_ctime:%ld\n",
+             "st_dev:%ld; st_ino:%ld; st_mode:%o; st_nlink:%ld; st_uid:%u; st_gid:%u; st_rdev:%ld; st_size:%ld; st_blksize:%ld; st_blocks:%ld; st_atime:%ld; st_mtime:%ld; st_ctime:%ld\n",
              path,
              (long)st->st_dev,
              (long)st->st_ino,
              (unsigned int)st->st_mode,
              (long)st->st_nlink,
-             (int)st->st_uid,
-             (int)st->st_gid,
+             (unsigned int)st->st_uid,
+             (unsigned int)st->st_gid,
              (long)st->st_rdev,
              (long)st->st_size,
              (long)st->st_blksize,
