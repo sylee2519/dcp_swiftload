@@ -14,7 +14,7 @@
 #include <assert.h>
 #include <libgen.h>
 
-#include <signal.h>
+#define LOG_FILE "./logfile.log"
 
 #include "mfu.h"
 #include "mfu_errors.h"
@@ -31,6 +31,17 @@ static int catalog_dir_loaded = 0;
 catalog_entry_t* catalog_entries = NULL;
 size_t catalog_entry_count = 0;
 int catalog_loaded = 0;
+
+void log_message(const char* format, ...) {
+    FILE* log_file = fopen(LOG_FILE, "a");
+    if (log_file != NULL) {
+        va_list args;
+        va_start(args, format);
+        vfprintf(log_file, format, args);
+        va_end(args);
+        fclose(log_file);
+    }
+}
 
 void load_catalog_if_needed() {
     if (!catalog_loaded) {
@@ -487,6 +498,7 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 #endif
 }
 
+
 int mfu_stat(const char* path, struct stat* buf) {
     load_catalog_if_needed();
 
@@ -496,6 +508,7 @@ int mfu_stat(const char* path, struct stat* buf) {
 #ifdef DEBUG
             printf("mfu_stat: Found %s in catalog\n", path);
 #endif
+            log_message("mfu_stat: Found %s in catalog\n", path);
             if (entry->has_stat) {
                 memcpy(buf, &entry->stat, sizeof(struct stat));
             } else {
@@ -504,14 +517,16 @@ int mfu_stat(const char* path, struct stat* buf) {
 #ifdef DEBUG
             printf("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 #endif
+            log_message("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 
             struct stat actual_stat;
             if (stat(path, &actual_stat) == 0) {
 #ifdef DEBUG
                 printf("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld\n", actual_stat.st_size, actual_stat.st_mtime);
 #endif
+                log_message("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld\n", actual_stat.st_size, actual_stat.st_mtime);
                 if (buf->st_size != actual_stat.st_size || buf->st_mtime != actual_stat.st_mtime) {
-                    raise(SIGUSR1); // 차이가 있을 경우 SIGUSR1 시그널을 보냄
+                    log_message("mfu_stat: catalog and actual stat data mismatch for %s: catalog (st_size=%ld, st_mtime=%ld), actual (st_size=%ld, st_mtime=%ld)\n", path, buf->st_size, buf->st_mtime, actual_stat.st_size, actual_stat.st_mtime);
                 }
             }
             return 0;
@@ -571,18 +586,21 @@ int mfu_lstat(const char* path, struct stat* buf) {
 #ifdef DEBUG
             printf("mfu_lstat: Found %s in catalog\n", path);
 #endif
+            log_message("mfu_lstat: Found %s in catalog\n", path);
             memcpy(buf, &entry->lstat, sizeof(struct stat));
 #ifdef DEBUG
             printf("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 #endif
+            log_message("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 
             struct stat actual_lstat;
             if (lstat(path, &actual_lstat) == 0) {
 #ifdef DEBUG
                 printf("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld\n", actual_lstat.st_size, actual_lstat.st_mtime);
 #endif
+                log_message("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld\n", actual_lstat.st_size, actual_lstat.st_mtime);
                 if (buf->st_size != actual_lstat.st_size || buf->st_mtime != actual_lstat.st_mtime) {
-                    raise(SIGUSR1); // 차이가 있을 경우 SIGUSR1 시그널을 보냄
+                    log_message("mfu_lstat: catalog and actual lstat data mismatch for %s: catalog (st_size=%ld, st_mtime=%ld), actual (st_size=%ld, st_mtime=%ld)\n", path, buf->st_size, buf->st_mtime, actual_lstat.st_size, actual_lstat.st_mtime);
                 }
             }
             return 0;
@@ -606,7 +624,6 @@ retry:
     }
     return rc;
 }
-
 
 /* calls lstat, and retries a few times if we get EIO or EINTR */
 int mfu_file_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
