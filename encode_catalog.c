@@ -194,7 +194,7 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
             for (i = 0; i < count; i++) {
                 rc[0] = llapi_layout_ost_index_get(layout, i, &idx);
                 if (rc[0]) {
-		            goto here_exit;
+                    goto here_exit_inner;
                 }
                 fprintf(f, "%s %lu %lu %lu %lu %lu %lu\n", abs_path, idx, start + i * size, end, interval, size, file_size);
             }
@@ -205,7 +205,7 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
                 printf("error: layout component iteration failed\n");
             break;
         }
-        here_exit:
+        here_exit_inner:
         llapi_layout_free(layout);
         fprintf(f, "end\n");
     }
