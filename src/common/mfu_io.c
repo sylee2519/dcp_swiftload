@@ -167,9 +167,9 @@ void load_catalog_dir_if_needed() {
         log_message("Catalog loaded with %zu directories.\n", catalog_dir_count);
         // 전체 디렉토리와 엔트리 출력
         for (size_t i = 0; i < catalog_dir_count; i++) {
-            printf("Directory: %s\n", catalog_dirs[i].dir_name);
+            log_message("Directory: %s\n", catalog_dirs[i].dir_name);
             for (size_t j = 0; j < catalog_dirs[i].entry_count; j++) {
-                printf("  Entry: %s\n", catalog_dirs[i].entries[j]);
+                log_message("  Entry: %s\n", catalog_dirs[i].entries[j]);
             }
         }
 #endif
