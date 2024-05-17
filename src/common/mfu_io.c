@@ -84,6 +84,10 @@ void load_catalog_dir_if_needed() {
             }
         }
 
+#ifdef DEBUG
+        log_message("Number of directories found: %zu\n", dir_count);
+#endif
+
         fseek(file, 0, SEEK_SET);
         catalog_dirs = malloc(dir_count * sizeof(catalog_dir_t));
         if (catalog_dirs == NULL) {
@@ -96,6 +100,10 @@ void load_catalog_dir_if_needed() {
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
+#ifdef DEBUG
+            log_message("Processing line: %s\n", line);
+#endif
+
             if (strncmp(line, "DIR_START", 9) == 0) {
                 sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
 
@@ -106,6 +114,10 @@ void load_catalog_dir_if_needed() {
                     entry_count++;
                 }
                 fseek(file, pos, SEEK_SET); // 저장한 위치로 돌아갑니다.
+
+#ifdef DEBUG
+                log_message("Entries in directory %s: %zu\n", catalog_dirs[index].dir_name, entry_count);
+#endif
 
                 // 실제 엔트리 개수에 맞게 메모리를 할당합니다.
                 catalog_dirs[index].entries = malloc(entry_count * sizeof(char*));
@@ -121,6 +133,9 @@ void load_catalog_dir_if_needed() {
                 continue;
             } else {
                 catalog_dirs[index - 1].entries[catalog_dirs[index - 1].entry_count] = strdup(line);
+#ifdef DEBUG
+                log_message("Added entry %s to directory %s\n", line, catalog_dirs[index - 1].dir_name);
+#endif
                 catalog_dirs[index - 1].entry_count++;
             }
         }
