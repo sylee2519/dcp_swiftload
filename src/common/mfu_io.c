@@ -14,6 +14,8 @@
 #include <assert.h>
 #include <libgen.h>
 
+#include <signal.h>
+
 #include "mfu.h"
 #include "mfu_errors.h"
 
