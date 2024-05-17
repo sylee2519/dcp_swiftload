@@ -68,7 +68,14 @@ void load_catalog_if_needed() {
 }
 
 void load_catalog_dir_if_needed() {
+#ifdef DEBUG
+        log_message("load catalog dir if needed\n");
+#endif
+
     if (!catalog_loaded) {
+#ifdef DEBUG
+        log_message("catalog not loaded\n");
+#endif
         const char* catalog_path = "catalog_dir.txt"; // TODO: catalog path 설정
         FILE* file = fopen(catalog_path, "r");
         if (file == NULL) {
