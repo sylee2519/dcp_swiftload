@@ -51,44 +51,43 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
         }
         snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
 
-        // 절대 경로를 얻기 위해 realpath를 사용합니다.
         if (realpath(path, abs_path) == NULL) {
             perror("realpath");
             continue;
         }
 
-        if (lstat(path, &lstatbuf) == -1) {
+        if (lstat(abs_path, &lstatbuf) == -1) {
             perror("lstat");
             continue;
         }
 
-        encode_stat_to_string(buffer, sizeof(buffer), path, &lstatbuf);
+        encode_stat_to_string(buffer, sizeof(buffer), abs_path, &lstatbuf);
         fprintf(f, "lstat\n%s", buffer);
 
         if (S_ISLNK(lstatbuf.st_mode)) {
-            if (stat(path, &statbuf) == -1) {
+            if (stat(abs_path, &statbuf) == -1) {
                 fprintf(f, "stat\nNone\n");
             } else {
-                encode_stat_to_string(buffer, sizeof(buffer), path, &statbuf);
+                encode_stat_to_string(buffer, sizeof(buffer), abs_path, &statbuf);
                 fprintf(f, "stat\n%s", buffer);
             }
         } else {
             fprintf(f, "stat\n%s", buffer);
         }
-              
+
         fprintf(f, "layout\n");
         if (!S_ISREG(lstatbuf.st_mode)) {
             fprintf(f, "None\n");
             if (S_ISDIR(lstatbuf.st_mode)) {
-                process_directory(path, catalog_path, f);
-            }   
+                process_directory(abs_path, catalog_path, f);
+            }
             continue;
         }
 
         struct llapi_layout *layout;
         int rc[5];
         uint64_t count = 0, size, start, end, idx, interval, file_size;
-        layout = llapi_layout_get_by_path(path, 0);
+        layout = llapi_layout_get_by_path(abs_path, 0);
         if (layout == NULL) {
             printf("errno: %d\n", errno);
             continue;
@@ -116,11 +115,9 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
             for (i = 0; i < count; i++) {
                 rc[0] = llapi_layout_ost_index_get(layout, i, &idx);
                 if (rc[0]) {
-//                    printf("error: cannot get ost index\n");
-//                    break;
-		            goto here_exit;	
+		            goto here_exit;
                 }
-                fprintf(f, "%s %lu %lu %lu %lu %lu %lu\n", path, idx, start + i * size, end, interval, size, file_size);
+                fprintf(f, "%s %lu %lu %lu %lu %lu %lu\n", abs_path, idx, start + i * size, end, interval, size, file_size);
             }
             rc[0] = llapi_layout_comp_use(layout, 3);
             if (rc[0] == 0)
@@ -132,11 +129,11 @@ void process_directory(const char* directory, const char* catalog_path, FILE* f)
         here_exit:
         llapi_layout_free(layout);
         fprintf(f, "end\n");
-
     }
 
     closedir(dir);
 }
+
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
