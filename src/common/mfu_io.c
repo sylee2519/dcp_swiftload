@@ -148,10 +148,7 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
 
             fgets(line, sizeof(line), file);  // Read the lstat info line
             sscanf(line,
-                    "st_dev:%lu; st_ino:%lu; st_mode:%u; st_nlink:%lu; "
-                    "st_uid:%u; st_gid:%u; st_rdev:%lu; st_size:%ld; "
-                    "st_blksize:%ld; st_blocks:%ld; st_atime:%ld; "
-                    "st_mtime:%ld; st_ctime:%ld",
+                    "st_dev:%lu; st_ino:%lu; st_mode:%o; st_nlink:%lu; st_uid:%u; st_gid:%u; st_rdev:%lu; st_size:%lld; st_blksize:%ld; st_blocks:%lld; st_atime:%ld; st_mtime:%ld; st_ctime:%ld",
                     &entries[index].lstat.st_dev,
                     &entries[index].lstat.st_ino,
                     &entries[index].lstat.st_mode,
