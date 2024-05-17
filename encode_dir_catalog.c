@@ -3,52 +3,54 @@
 #include <string.h>
 #include <dirent.h>
 #include <sys/types.h>
-#include <unistd.h>
 
-void encode_dir_entries(const char *directory, const char *catalog_path) {
-    FILE *f = fopen(catalog_path, "w");
-    if (f == NULL) {
-        perror("Error opening catalog file");
-        exit(EXIT_FAILURE);
-    }
-
-    DIR *dir = opendir(directory);
-    if (dir == NULL) {
-        perror("Error opening directory");
-        fclose(f);
-        exit(EXIT_FAILURE);
-    }
-
+void encode_dir_entries(const char *directory, FILE *catalog) {
+    DIR *dir;
     struct dirent *entry;
-    char path[1024];
-    snprintf(path, sizeof(path), "%s", directory);
-    fprintf(f, "DIR_START %s\n", path);
+
+    if (!(dir = opendir(directory))) {
+        perror("opendir");
+        return;
+    }
+
+    fprintf(catalog, "DIR_START %s\n", directory);
 
     while ((entry = readdir(dir)) != NULL) {
         if (entry->d_type == DT_DIR) {
-            if (strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0) {
-                fprintf(f, "%s\n", entry->d_name);
+            char path[1024];
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+                continue;
             }
+            snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
+            fprintf(catalog, "%s\n", entry->d_name);
+            encode_dir_entries(path, catalog);
         } else {
-            fprintf(f, "%s\n", entry->d_name);
+            fprintf(catalog, "%s\n", entry->d_name);
         }
     }
 
-    fprintf(f, "DIR_END\n");
+    fprintf(catalog, "DIR_END\n");
     closedir(dir);
-    fclose(f);
 }
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         fprintf(stderr, "Usage: %s <directory> <catalog_path>\n", argv[0]);
-        exit(EXIT_FAILURE);
+        return 1;
     }
 
     const char *directory = argv[1];
     const char *catalog_path = argv[2];
-    encode_dir_entries(directory, catalog_path);
-    printf("Catalog saved to %s\n", catalog_path);
 
+    FILE *catalog = fopen(catalog_path, "w");
+    if (!catalog) {
+        perror("fopen");
+        return 1;
+    }
+
+    encode_dir_entries(directory, catalog);
+    fclose(catalog);
+
+    printf("Catalog saved to %s\n", catalog_path);
     return 0;
 }
