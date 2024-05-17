@@ -74,3 +74,6 @@ spack.lock
 
 # Code editors
 .vscode
+
+CMakeCache.txt
+encode_catalog
