@@ -149,7 +149,7 @@ void load_catalog_dir_if_needed() {
 
         fclose(file);
         catalog_dir_count = index;
-        catalog_loaded = 1;
+        catalog_dir_loaded = 1;
 
 #ifdef DEBUG
         log_message("Catalog loaded with %zu directories.\n", catalog_dir_count);
