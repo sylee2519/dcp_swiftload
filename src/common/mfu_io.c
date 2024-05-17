@@ -97,18 +97,18 @@ void load_catalog_dir_if_needed() {
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
-#ifdef DEBUG
-            log_message("Processing line: %s\n", line);
-#endif
+// #ifdef DEBUG
+//             log_message("Processing line: %s\n", line);
+// #endif
 
             if (strncmp(line, "DIR_START", 9) == 0) {
                 // 새 디렉토리 항목 추가
                 sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
                 catalog_dirs[index].entries = malloc(count * sizeof(char*));
                 entry_index = 0;
-#ifdef DEBUG
-                log_message("New directory: %s\n", catalog_dirs[index].dir_name);
-#endif
+// #ifdef DEBUG
+//                 log_message("New directory: %s\n", catalog_dirs[index].dir_name);
+// #endif
                 index++;
             } else if (strncmp(line, "DIR_END", 7) == 0) {
                 // 디렉토리 끝
@@ -130,6 +130,13 @@ void load_catalog_dir_if_needed() {
 
 #ifdef DEBUG
         log_message("Catalog loaded with %zu directories.\n", catalog_dir_count);
+        // 전체 디렉토리와 엔트리 출력
+        for (size_t i = 0; i < catalog_dir_count; i++) {
+            printf("Directory: %s\n", catalog_dirs[i].dir_name);
+            for (size_t j = 0; j < catalog_dirs[i].entry_count; j++) {
+                printf("  Entry: %s\n", catalog_dirs[i].entries[j]);
+            }
+        }
 #endif
     }
 }
