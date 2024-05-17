@@ -10,10 +10,7 @@ def encode_dir_entries(directory, catalog_path):
             entries.append((root, name))
         entries.append((root, "DIR_END"))
 
-    entries.sort()
-
     with open(catalog_path, 'w') as f:
-        prev_root = None
         for root, name in entries:
             if name == "DIR_START":
                 f.write(f"DIR_START {root}\n")
