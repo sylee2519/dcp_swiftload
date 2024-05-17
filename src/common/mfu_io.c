@@ -262,17 +262,17 @@ int compare_catalog_entry(const void* a, const void* b) {
 catalog_entry_t* find_entry_in_catalog(catalog_entry_t* entries, size_t count, const char* path) {
     catalog_entry_t key;
     strncpy(key.path, path, PATH_MAX);
-#ifdef DEBUG
-    printf("Catalog entries:\n");
-    for (size_t i = 0; i < count; i++) {
-        printf("Entry %zu: %s\n", i, entries[i].path);
-    }
-    printf("Searching for: %s\n", key.path);
-#endif
+// #ifdef DEBUG
+//     printf("Catalog entries:\n");
+//     for (size_t i = 0; i < count; i++) {
+//         printf("Entry %zu: %s\n", i, entries[i].path);
+//     }
+//     printf("Searching for: %s\n", key.path);
+// #endif
     catalog_entry_t* result = bsearch(&key, entries, count, sizeof(catalog_entry_t), compare_catalog_entry);
 #ifdef DEBUG
     if (result) {
-        printf("Found entry for: %s\n", result->path);
+        // printf("Found entry for: %s\n", result->path);
     } else {
         printf("Entry not found for: %s\n", key.path);
     }
