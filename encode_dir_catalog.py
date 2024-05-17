@@ -5,24 +5,22 @@ def encode_dir_entries(directory, catalog_path):
     entries = []
 
     for root, dirs, files in os.walk(directory):
+        entries.append((root, "DIR_START"))
         for name in dirs + files:
-            path = os.path.join(root, name)
-            entry_type = "D" if os.path.isdir(path) else "F"
-            entries.append((root, name, entry_type))
+            entries.append((root, name))
+        entries.append((root, "DIR_END"))
 
     entries.sort()
 
     with open(catalog_path, 'w') as f:
         prev_root = None
-        for root, name, entry_type in entries:
-            if root != prev_root:
-                if prev_root is not None:
-                    f.write("DIR_END\n")
+        for root, name in entries:
+            if name == "DIR_START":
                 f.write(f"DIR_START {root}\n")
-                prev_root = root
-            f.write(f"{name} {entry_type}\n")
-        if prev_root is not None:
-            f.write("DIR_END\n")
+            elif name == "DIR_END":
+                f.write("DIR_END\n")
+            else:
+                f.write(f"{name}\n")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

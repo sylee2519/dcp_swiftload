@@ -16,6 +16,7 @@
 
 #define LOG_FILE "./logfile.log"
 #include <stdarg.h>
+#include <stdbool.h>
 
 #include "mfu.h"
 #include "mfu_errors.h"
@@ -78,11 +79,13 @@ void load_catalog_dir_if_needed() {
         size_t count = 0;
         char line[LINE_MAX];
         while (fgets(line, sizeof(line), file)) {
-            count++;
+            if (strncmp(line, "DIR_START", 9) == 0) {
+                count++;
+            }
         }
 
         fseek(file, 0, SEEK_SET);
-        catalog_dirs = malloc((count / 3) * sizeof(catalog_dir_t)); // 각 디렉토리가 3줄을 차지하므로
+        catalog_dirs = malloc(count * sizeof(catalog_dir_t));
         if (catalog_dirs == NULL) {
             perror("malloc");
             fclose(file);
@@ -91,7 +94,6 @@ void load_catalog_dir_if_needed() {
 
         size_t index = 0;
         size_t entry_index = 0;
-        char current_dir[LINE_MAX] = "";
         while (fgets(line, sizeof(line), file)) {
             line[strcspn(line, "\n")] = '\0'; // Remove newline character
 
@@ -99,36 +101,26 @@ void load_catalog_dir_if_needed() {
             log_message("Processing line: %s\n", line);
 #endif
 
-            if (strlen(current_dir) == 0 || strcmp(current_dir, line) != 0) {
-                // 새로운 디렉토리 항목을 추가합니다.
-                strcpy(current_dir, line);
-                strcpy(catalog_dirs[index].dir_name, line);
+            if (strncmp(line, "DIR_START", 9) == 0) {
+                // 새 디렉토리 항목 추가
+                sscanf(line, "DIR_START %s", catalog_dirs[index].dir_name);
                 catalog_dirs[index].entries = malloc(count * sizeof(char*));
-#ifdef DEBUG
-                log_message("New directory: %s\n", line);
-#endif
                 entry_index = 0;
-                index++;
-            } else {
-                // 파일 또는 디렉토리 항목을 추가합니다.
-                fgets(line, sizeof(line), file);
-                line[strcspn(line, "\n")] = '\0'; // Remove newline character
-                char entry_name[LINE_MAX];
-                strcpy(entry_name, line);
-
-                fgets(line, sizeof(line), file);
-                line[strcspn(line, "\n")] = '\0'; // Remove newline character
-                char entry_type[LINE_MAX];
-                strcpy(entry_type, line);
-
-                catalog_dirs[index - 1].entries[entry_index] = strdup(entry_name);
 #ifdef DEBUG
-                log_message("New %s entry: %s in directory: %s\n", entry_type, entry_name, catalog_dirs[index - 1].dir_name);
+                log_message("New directory: %s\n", catalog_dirs[index].dir_name);
 #endif
-
-                entry_index++;
+                index++;
+            } else if (strncmp(line, "DIR_END", 7) == 0) {
+                // 디렉토리 끝
                 catalog_dirs[index - 1].entry_count = entry_index;
                 catalog_dirs[index - 1].current_entry = 0;
+            } else {
+                // 항목 추가
+                catalog_dirs[index - 1].entries[entry_index] = strdup(line);
+#ifdef DEBUG
+                log_message("New entry: %s in directory: %s\n", line, catalog_dirs[index - 1].dir_name);
+#endif
+                entry_index++;
             }
         }
 
@@ -141,7 +133,6 @@ void load_catalog_dir_if_needed() {
 #endif
     }
 }
-
 
 catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     FILE* file = fopen(catalog_path, "r");
@@ -322,6 +313,10 @@ catalog_dir_t* find_dir_in_catalog(const char* path) {
     log_message("Directory not found: %s\n", path);
 #endif
     return NULL;
+}
+
+bool is_catalog_dir(DIR* dirp) {
+    return (catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count;
 }
 
 /* calls access, and retries a few times if we get EIO or EINTR */
@@ -1757,7 +1752,6 @@ retry:
         if (errno == EINTR || errno == EIO) {
             tries--;
             if (tries > 0) {
-                /* sleep a bit before consecutive tries */
                 usleep(MFU_IO_USLEEP);
                 goto retry;
             }
@@ -1794,7 +1788,7 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 
 /* close directory, retry a few times on EINTR or EIO */
 int mfu_closedir(DIR* dirp) {
-    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+    if (is_catalog_dir(dirp)) {
 #ifdef DEBUG
         log_message("mfu_closedir: Closing catalog directory\n");
 #endif
@@ -1810,7 +1804,6 @@ retry:
         if (errno == EINTR || errno == EIO) {
             tries--;
             if (tries > 0) {
-                /* sleep a bit before consecutive tries */
                 usleep(MFU_IO_USLEEP);
                 goto retry;
             }
@@ -1851,7 +1844,7 @@ struct dirent* daos_readdir(DIR* dirp, mfu_file_t* mfu_file)
 
 /* read directory entry, retry a few times on ENOENT, EIO, or EINTR */
 struct dirent* mfu_readdir(DIR* dirp) {
-    if ((catalog_dir_t*)dirp >= (catalog_dir_t*)catalog_dirs && (catalog_dir_t*)dirp < (catalog_dir_t*)catalog_dirs + catalog_dir_count) {
+    if (is_catalog_dir(dirp)) {
         catalog_dir_t* mfu_dir = (catalog_dir_t*)dirp;
         if (mfu_dir->current_entry < mfu_dir->entry_count) {
 #ifdef DEBUG
@@ -1866,7 +1859,6 @@ struct dirent* mfu_readdir(DIR* dirp) {
         return NULL;
     }
 
-    /* read next directory entry, retry a few times */
     struct dirent* entry;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1876,7 +1868,6 @@ retry:
         if (errno == EINTR || errno == EIO || errno == ENOENT) {
             tries--;
             if (tries > 0) {
-                /* sleep a bit before consecutive tries */
                 usleep(MFU_IO_USLEEP);
                 goto retry;
             }
