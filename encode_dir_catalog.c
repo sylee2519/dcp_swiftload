@@ -91,8 +91,11 @@ void scan_directory(const char *directory, DirEntry **dir_entries) {
             continue;
         }
 
-        char path[1024];
+        char path[PATH_MAX];
         snprintf(path, sizeof(path), "%s/%s", directory, entry->d_name);
+
+        // 로그 추가
+        printf("Scanning: %s\n", path);
 
         if (entry->d_type == DT_DIR) {
             add_entry(&dir_entry->entries, create_entry(entry->d_name));
@@ -108,10 +111,17 @@ void scan_directory(const char *directory, DirEntry **dir_entries) {
 void write_entries(FILE *catalog, DirEntry *dir_entries) {
     for (DirEntry *dir_entry = dir_entries; dir_entry != NULL; dir_entry = dir_entry->next) {
         fprintf(catalog, "DIR_START %s\n", dir_entry->path);
+        // 로그 추가
+        printf("DIR_START %s\n", dir_entry->path);
+
         for (Entry *entry = dir_entry->entries; entry != NULL; entry = entry->next) {
             fprintf(catalog, "%s\n", entry->name);
+            // 로그 추가
+            printf("Entry: %s\n", entry->name);
         }
         fprintf(catalog, "DIR_END\n");
+        // 로그 추가
+        printf("DIR_END\n");
     }
 }
 
