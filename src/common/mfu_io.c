@@ -500,8 +500,18 @@ int mfu_stat(const char* path, struct stat* buf) {
                 memcpy(buf, &entry->lstat, sizeof(struct stat));
             }
 #ifdef DEBUG
-            printf("mfu_stat: stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+            printf("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 #endif
+
+            struct stat actual_stat;
+            if (stat(path, &actual_stat) == 0) {
+#ifdef DEBUG
+                printf("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld\n", actual_stat.st_size, actual_stat.st_mtime);
+#endif
+                if (buf->st_size != actual_stat.st_size || buf->st_mtime != actual_stat.st_mtime) {
+                    raise(SIGUSR1); // 차이가 있을 경우 SIGUSR1 시그널을 보냄
+                }
+            }
             return 0;
         }
     }
