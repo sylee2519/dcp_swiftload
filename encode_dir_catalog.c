@@ -21,8 +21,15 @@ Entry* create_entry(const char *name, int is_dir) {
 }
 
 void add_entry(Entry **list, Entry *entry) {
-    entry->next = *list;
-    *list = entry;
+    if (*list == NULL) {
+        *list = entry;
+    } else {
+        Entry *temp = *list;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = entry;
+    }
 }
 
 void free_entries(Entry *entry) {
