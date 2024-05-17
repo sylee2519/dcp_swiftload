@@ -15,6 +15,7 @@
 #include <libgen.h>
 
 #define LOG_FILE "./logfile.log"
+#include <stdarg.h>
 
 #include "mfu.h"
 #include "mfu_errors.h"
@@ -41,6 +42,18 @@ void log_message(const char* format, ...) {
         va_end(args);
         fclose(log_file);
     }
+}
+
+int compare_stats(const struct stat* buf1, const struct stat* buf2) {
+    return buf1->st_size == buf2->st_size &&
+           buf1->st_mtime == buf2->st_mtime &&
+           buf1->st_mode == buf2->st_mode &&
+           buf1->st_uid == buf2->st_uid &&
+           buf1->st_gid == buf2->st_gid &&
+           buf1->st_nlink == buf2->st_nlink &&
+           buf1->st_ino == buf2->st_ino &&
+           buf1->st_dev == buf2->st_dev &&
+           buf1->st_rdev == buf2->st_rdev;
 }
 
 void load_catalog_if_needed() {
@@ -508,27 +521,28 @@ int mfu_stat(const char* path, struct stat* buf) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
         if (entry != NULL) {
 #ifdef DEBUG
-            printf("mfu_stat: Found %s in catalog\n", path);
-#endif
             log_message("mfu_stat: Found %s in catalog\n", path);
+#endif
             if (entry->has_stat) {
                 memcpy(buf, &entry->stat, sizeof(struct stat));
             } else {
                 memcpy(buf, &entry->lstat, sizeof(struct stat));
             }
 #ifdef DEBUG
-            printf("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+            log_message("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld, st_mode=%o, st_uid=%u, st_gid=%u, st_nlink=%lu, st_ino=%lu, st_dev=%lu, st_rdev=%lu\n",
+                buf->st_size, buf->st_mtime, buf->st_mode, buf->st_uid, buf->st_gid, buf->st_nlink, buf->st_ino, buf->st_dev, buf->st_rdev);
 #endif
-            log_message("mfu_stat: catalog stat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 
             struct stat actual_stat;
             if (stat(path, &actual_stat) == 0) {
 #ifdef DEBUG
-                printf("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld\n", actual_stat.st_size, actual_stat.st_mtime);
+                log_message("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld, st_mode=%o, st_uid=%u, st_gid=%u, st_nlink=%lu, st_ino=%lu, st_dev=%lu, st_rdev=%lu\n",
+                    actual_stat.st_size, actual_stat.st_mtime, actual_stat.st_mode, actual_stat.st_uid, actual_stat.st_gid, actual_stat.st_nlink, actual_stat.st_ino, actual_stat.st_dev, actual_stat.st_rdev);
 #endif
-                log_message("mfu_stat: actual stat data: st_size=%ld, st_mtime=%ld\n", actual_stat.st_size, actual_stat.st_mtime);
-                if (buf->st_size != actual_stat.st_size || buf->st_mtime != actual_stat.st_mtime) {
-                    log_message("mfu_stat: catalog and actual stat data mismatch for %s: catalog (st_size=%ld, st_mtime=%ld), actual (st_size=%ld, st_mtime=%ld)\n", path, buf->st_size, buf->st_mtime, actual_stat.st_size, actual_stat.st_mtime);
+                if (!compare_stats(buf, &actual_stat)) {
+#ifdef DEBUG
+                    log_message("mfu_stat: catalog and actual stat data mismatch for %s\n", path);
+#endif
                 }
             }
             return 0;
@@ -586,23 +600,24 @@ int mfu_lstat(const char* path, struct stat* buf) {
         catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, path);
         if (entry != NULL) {
 #ifdef DEBUG
-            printf("mfu_lstat: Found %s in catalog\n", path);
-#endif
             log_message("mfu_lstat: Found %s in catalog\n", path);
+#endif
             memcpy(buf, &entry->lstat, sizeof(struct stat));
 #ifdef DEBUG
-            printf("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
+            log_message("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld, st_mode=%o, st_uid=%u, st_gid=%u, st_nlink=%lu, st_ino=%lu, st_dev=%lu, st_rdev=%lu\n",
+                buf->st_size, buf->st_mtime, buf->st_mode, buf->st_uid, buf->st_gid, buf->st_nlink, buf->st_ino, buf->st_dev, buf->st_rdev);
 #endif
-            log_message("mfu_lstat: catalog lstat data: st_size=%ld, st_mtime=%ld\n", buf->st_size, buf->st_mtime);
 
             struct stat actual_lstat;
             if (lstat(path, &actual_lstat) == 0) {
 #ifdef DEBUG
-                printf("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld\n", actual_lstat.st_size, actual_lstat.st_mtime);
+                log_message("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld, st_mode=%o, st_uid=%u, st_gid=%u, st_nlink=%lu, st_ino=%lu, st_dev=%lu, st_rdev=%lu\n",
+                    actual_lstat.st_size, actual_lstat.st_mtime, actual_lstat.st_mode, actual_lstat.st_uid, actual_lstat.st_gid, actual_lstat.st_nlink, actual_lstat.st_ino, actual_lstat.st_dev, actual_lstat.st_rdev);
 #endif
-                log_message("mfu_lstat: actual lstat data: st_size=%ld, st_mtime=%ld\n", actual_lstat.st_size, actual_lstat.st_mtime);
-                if (buf->st_size != actual_lstat.st_size || buf->st_mtime != actual_lstat.st_mtime) {
-                    log_message("mfu_lstat: catalog and actual lstat data mismatch for %s: catalog (st_size=%ld, st_mtime=%ld), actual (st_size=%ld, st_mtime=%ld)\n", path, buf->st_size, buf->st_mtime, actual_lstat.st_size, actual_lstat.st_mtime);
+                if (!compare_stats(buf, &actual_lstat)) {
+#ifdef DEBUG
+                    log_message("mfu_lstat: catalog and actual lstat data mismatch for %s\n", path);
+#endif
                 }
             }
             return 0;
