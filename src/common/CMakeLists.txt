@@ -52,6 +52,7 @@ LIST(APPEND libmfu_srcs
   mfu_progress.c
   mfu_util.c
   strmap.c
+  timing.c
   )
 IF(ENABLE_LIBARCHIVE)
   LIST(APPEND libmfu_srcs
