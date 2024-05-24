@@ -18,6 +18,7 @@ LIST(APPEND libmfu_install_headers
   mfu_proc.h
   mfu_progress.h
   mfu_util.h
+  timing.h
   )
 if(ENABLE_DAOS)
   LIST(APPEND libmfu_install_headers
