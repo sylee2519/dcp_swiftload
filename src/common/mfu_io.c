@@ -20,6 +20,7 @@
 
 #include "mfu.h"
 #include "mfu_errors.h"
+#include "timing.h"
 
 #define MFU_IO_TRIES  (5)
 #define MFU_IO_USLEEP (100)
@@ -298,7 +299,6 @@ catalog_entry_t* load_catalog(const char* catalog_path, size_t* out_count) {
     return entries;
 }
 
-
 int compare_catalog_entry(const void* a, const void* b) {
     return strcmp(((catalog_entry_t*)a)->path, ((catalog_entry_t*)b)->path);
 }
@@ -366,6 +366,7 @@ int mfu_file_access(const char* path, int amode, mfu_file_t* mfu_file)
 
 int mfu_access(const char* path, int amode)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -381,6 +382,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -411,6 +414,7 @@ int mfu_file_faccessat(int dirfd, const char* path, int amode, int flags, mfu_fi
 
 int mfu_faccessat(int dirfd, const char* path, int amode, int flags)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -426,6 +430,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -463,6 +469,7 @@ int mfu_file_lchown(const char* path, uid_t owner, gid_t group, mfu_file_t* mfu_
 
 int mfu_lchown(const char* path, uid_t owner, gid_t group)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -478,6 +485,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -500,6 +509,7 @@ int daos_chmod(const char *path, mode_t mode, mfu_file_t* mfu_file)
 
 int mfu_chmod(const char* path, mode_t mode)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -515,6 +525,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -551,6 +563,7 @@ int mfu_file_utimensat(int dirfd, const char* pathname, const struct timespec ti
 
 int mfu_utimensat(int dirfd, const char* pathname, const struct timespec times[2], int flags)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -566,6 +579,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -599,6 +614,7 @@ int daos_stat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 
 
 int mfu_stat(const char* path, struct stat* buf) {
+    double start = MPI_Wtime();
     load_catalog_if_needed();
 
     if (catalog_loaded) {
@@ -629,6 +645,8 @@ int mfu_stat(const char* path, struct stat* buf) {
 #endif
                 }
             }
+            double end = MPI_Wtime();
+            md_record_timing(start, end);
             return 0;
         }
         else {
@@ -653,6 +671,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -683,6 +703,7 @@ int daos_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 }
 
 int mfu_lstat(const char* path, struct stat* buf) {
+    double start = MPI_Wtime();
     load_catalog_if_needed();
 
     if (catalog_loaded) {
@@ -709,6 +730,8 @@ int mfu_lstat(const char* path, struct stat* buf) {
 #endif
                 }
             }
+            double end = MPI_Wtime();
+            md_record_timing(start, end);
             return 0;
         }
         else {
@@ -733,6 +756,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -754,6 +779,7 @@ int mfu_file_lstat(const char* path, struct stat* buf, mfu_file_t* mfu_file)
 /* calls lstat64, and retries a few times if we get EIO or EINTR */
 int mfu_lstat64(const char* path, struct stat64* buf)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -769,6 +795,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -784,6 +812,7 @@ int daos_mknod(const char* path, mode_t mode, mfu_file_t* mfu_file)
 
 int mfu_mknod(const char* path, mode_t mode, dev_t dev)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -799,6 +828,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -834,6 +865,7 @@ int mfu_file_remove(const char* path, mfu_file_t* mfu_file)
 /* call remove, retry a few times on EINTR or EIO */
 int mfu_remove(const char* path)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -849,6 +881,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -879,7 +913,10 @@ char* mfu_file_realpath(const char* path, char* resolved_path, mfu_file_t* mfu_f
 
 char* mfu_realpath(const char* path, char* resolved_path)
 {
+    double start = MPI_Wtime();
     char* p = realpath(path, resolved_path);
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return p;
 }
 
@@ -915,6 +952,7 @@ ssize_t daos_readlink(const char* path, char* buf, size_t bufsize, mfu_file_t* m
 /* call readlink, retry a few times on EINTR or EIO */
 ssize_t mfu_readlink(const char* path, char* buf, size_t bufsize)
 {
+    double start = MPI_Wtime();
     ssize_t rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -930,6 +968,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -963,6 +1003,7 @@ int daos_symlink(const char* oldpath, const char* newpath, mfu_file_t* mfu_file)
 /* call symlink, retry a few times on EINTR or EIO */
 int mfu_symlink(const char* oldpath, const char* newpath)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -978,6 +1019,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1000,6 +1043,7 @@ int mfu_file_symlink(const char* oldpath, const char* newpath, mfu_file_t* mfu_f
 /* call hardlink, retry a few times on EINTR or EIO */
 int mfu_hardlink(const char* oldpath, const char* newpath)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1015,6 +1059,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1034,6 +1080,7 @@ int daos_open(const char* file, int flags, mode_t mode, mfu_file_t* mfu_file)
 /* open file with specified flags and mode, retry open a few times on failure */
 int mfu_open(const char* file, int flags, ...)
 {
+    double start = MPI_Wtime();
     /* extract the mode (see man 2 open) */
     int mode_set = 0;
     mode_t mode = 0;
@@ -1079,6 +1126,8 @@ int mfu_open(const char* file, int flags, ...)
              /* we could abort, but probably don't want to here */
          }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return fd;
 }
 
@@ -1140,6 +1189,7 @@ int daos_close(const char* file, mfu_file_t* mfu_file)
 /* close file */
 int mfu_close(const char* file, int fd)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
 retry:
     errno = 0;
@@ -1154,6 +1204,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1191,6 +1243,7 @@ int daos_lseek(const char* file, mfu_file_t* mfu_file, off_t pos, int whence)
 /* seek file descriptor to specified position */
 off_t mfu_lseek(const char* file, int fd, off_t pos, int whence)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
 retry:
     errno = 0;
@@ -1205,6 +1258,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1257,6 +1312,7 @@ ssize_t daos_read(const char* file, void* buf, size_t size, mfu_file_t* mfu_file
 
 ssize_t mfu_read(const char* file, int fd, void* buf, size_t size)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
     ssize_t n = 0;
     while ((size_t)n < size) {
@@ -1268,10 +1324,14 @@ ssize_t mfu_read(const char* file, int fd, void* buf, size_t size)
             tries = MFU_IO_TRIES;
 
             /* return, even if we got a short read */
+            double end = MPI_Wtime();
+            record_timing(start, end);
             return n;
         }
         else if (rc == 0) {
             /* EOF */
+            double end = MPI_Wtime();
+            record_timing(start, end);
             return n;
         }
         else {   /* (rc < 0) */
@@ -1288,6 +1348,8 @@ ssize_t mfu_read(const char* file, int fd, void* buf, size_t size)
             usleep(MFU_IO_USLEEP);
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return n;
 }
 
@@ -1308,6 +1370,7 @@ ssize_t mfu_file_write(const char* file, const void* buf, size_t size, mfu_file_
 
 ssize_t mfu_write(const char* file, int fd, const void* buf, size_t size)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
     ssize_t n = 0;
     while ((size_t)n < size) {
@@ -1338,6 +1401,8 @@ ssize_t mfu_write(const char* file, int fd, const void* buf, size_t size)
             usleep(MFU_IO_USLEEP);
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return n;
 }
 
@@ -1392,15 +1457,21 @@ ssize_t daos_pread(const char* file, void* buf, size_t size, off_t offset, mfu_f
 
 ssize_t mfu_pread(const char* file, int fd, void* buf, size_t size, off_t offset)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
     while (1) {
         ssize_t rc = pread(fd, (char*) buf, size, offset);
         if (rc > 0) {
             /* read some data */
+            double end = MPI_Wtime();
+            pread_record_timing(start, end);
             return rc;
         }
         else if (rc == 0) {
             /* EOF */
+            double end = MPI_Wtime();
+            record_timing(start, end);
+            pread_record_timing(start, end);
             return rc;
         }
         else {   /* (rc < 0) */
@@ -1434,15 +1505,20 @@ ssize_t mfu_file_pwrite(const char* file, const void* buf, size_t size, off_t of
 
 ssize_t mfu_pwrite(const char* file, int fd, const void* buf, size_t size, off_t offset)
 {
+    double start = MPI_Wtime();
     int tries = MFU_IO_TRIES;
     while (1) {
         ssize_t rc = pwrite(fd, (const char*) buf, size, offset);
         if (rc > 0) {
             /* wrote some data */
+            double end = MPI_Wtime();
+            record_timing(start, end);
             return rc;
         }
         else if (rc == 0) {
             /* didn't write anything, but not an error either */
+            double end = MPI_Wtime();
+            record_timing(start, end);
             return rc;
         }
         else { /* (rc < 0) */
@@ -1494,6 +1570,7 @@ int mfu_file_truncate(const char* file, off_t length, mfu_file_t* mfu_file)
 /* truncate a file */
 int mfu_truncate(const char* file, off_t length)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1509,8 +1586,11 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
+
 
 int daos_truncate(const char* file, off_t length, mfu_file_t* mfu_file)
 {
@@ -1534,6 +1614,7 @@ int daos_ftruncate(mfu_file_t* mfu_file, off_t length)
 
 int mfu_ftruncate(int fd, off_t length)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1549,6 +1630,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1595,6 +1678,7 @@ int daos_unlink(const char* file, mfu_file_t* mfu_file)
 /* delete a file */
 int mfu_unlink(const char* file)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1610,12 +1694,15 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
 /* force flush of written data */
 int mfu_fsync(const char* file, int fd)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1631,6 +1718,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1641,6 +1730,7 @@ retry:
 /* get current working directory, abort if fail or buffer too small */
 void mfu_getcwd(char* buf, size_t size)
 {
+    double start = MPI_Wtime();
     errno = 0;
     char* p = getcwd(buf, size);
     if (p == NULL) {
@@ -1648,6 +1738,8 @@ void mfu_getcwd(char* buf, size_t size)
                     errno, strerror(errno)
                    );
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
 }
 
 int daos_mkdir(const char* dir, mode_t mode, mfu_file_t* mfu_file)
@@ -1662,6 +1754,7 @@ int daos_mkdir(const char* dir, mode_t mode, mfu_file_t* mfu_file)
 
 int mfu_mkdir(const char* dir, mode_t mode)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1677,6 +1770,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1712,6 +1807,7 @@ int mfu_file_rmdir(const char* dir, mfu_file_t* mfu_file)
 /* remove directory, retry a few times on EINTR or EIO */
 int mfu_rmdir(const char* dir)
 {
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1727,6 +1823,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1759,6 +1857,7 @@ DIR* daos_opendir(const char* dir, mfu_file_t* mfu_file)
 
 /* open directory, retry a few times on EINTR or EIO */
 DIR* mfu_opendir(const char* dir) {
+    double start = MPI_Wtime();
     load_catalog_dir_if_needed();
 
     catalog_dir_t* mfu_dir = find_dir_in_catalog(dir);
@@ -1766,6 +1865,8 @@ DIR* mfu_opendir(const char* dir) {
 #ifdef DEBUG
         log_message("mfu_opendir: Found directory %s in catalog\n", dir);
 #endif
+        double end = MPI_Wtime();
+        md_record_timing(start, end);
         return (DIR*)mfu_dir;
     }
 
@@ -1787,6 +1888,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return dirp;
 }
 
@@ -1817,14 +1920,9 @@ int daos_closedir(DIR* dirp, mfu_file_t* mfu_file)
 }
 
 /* close directory, retry a few times on EINTR or EIO */
-int mfu_closedir(DIR* dirp) {
-    if (is_catalog_dir(dirp)) {
-#ifdef DEBUG
-        log_message("mfu_closedir: Closing catalog directory\n");
-#endif
-        return 0;
-    }
-
+int mfu_closedir(DIR* dirp)
+{
+    double start = MPI_Wtime();
     int rc;
     int tries = MFU_IO_TRIES;
 retry:
@@ -1834,11 +1932,14 @@ retry:
         if (errno == EINTR || errno == EIO) {
             tries--;
             if (tries > 0) {
+                /* sleep a bit before consecutive tries */
                 usleep(MFU_IO_USLEEP);
                 goto retry;
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return rc;
 }
 
@@ -1874,6 +1975,7 @@ struct dirent* daos_readdir(DIR* dirp, mfu_file_t* mfu_file)
 
 /* read directory entry, retry a few times on ENOENT, EIO, or EINTR */
 struct dirent* mfu_readdir(DIR* dirp) {
+    double start = MPI_Wtime();
     if (is_catalog_dir(dirp)) {
         catalog_dir_t* mfu_dir = (catalog_dir_t*)dirp;
         if (mfu_dir->current_entry < mfu_dir->entry_count) {
@@ -1884,8 +1986,12 @@ struct dirent* mfu_readdir(DIR* dirp) {
             memset(&entry, 0, sizeof(entry));
             strncpy(entry.d_name, mfu_dir->entries[mfu_dir->current_entry], sizeof(entry.d_name) - 1);
             mfu_dir->current_entry++;
+            double end = MPI_Wtime();
+            record_timing(start, end);
             return &entry;
         }
+        double end = MPI_Wtime();
+        record_timing(start, end);
         return NULL;
     }
 
@@ -1903,6 +2009,8 @@ retry:
             }
         }
     }
+    double end = MPI_Wtime();
+    record_timing(start, end);
     return entry;
 }
 
@@ -1937,7 +2045,10 @@ ssize_t mfu_file_llistxattr(const char* path, char* list, size_t size, mfu_file_
 
 ssize_t mfu_llistxattr(const char* path, char* list, size_t size)
 {
+    double start = MPI_Wtime();
     ssize_t rc = llistxattr(path, list, size);
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -1974,7 +2085,10 @@ ssize_t mfu_file_listxattr(const char* path, char* list, size_t size, mfu_file_t
 
 ssize_t mfu_listxattr(const char* path, char* list, size_t size)
 {
+    double start = MPI_Wtime();
     ssize_t rc = listxattr(path, list, size);
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -2011,7 +2125,10 @@ ssize_t mfu_file_lgetxattr(const char* path, const char* name, void* value, size
 
 ssize_t mfu_lgetxattr(const char* path, const char* name, void* value, size_t size)
 {
+    double start = MPI_Wtime();
     ssize_t rc = lgetxattr(path, name, value, size);
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
@@ -2046,9 +2163,13 @@ ssize_t mfu_file_getxattr(const char* path, const char* name, void* value, size_
 
 ssize_t mfu_getxattr(const char* path, const char* name, void* value, size_t size)
 {
+    double start = MPI_Wtime();
     ssize_t rc = getxattr(path, name, value, size);
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
+
 
 ssize_t daos_getxattr(const char* path, const char* name, void* value, size_t size, mfu_file_t* mfu_file)
 {
@@ -2082,7 +2203,10 @@ int mfu_file_lsetxattr(const char* path, const char* name, const void* value, si
 
 int mfu_lsetxattr(const char* path, const char* name, const void* value, size_t size, int flags)
 {
+    double start = MPI_Wtime();
     int rc = lsetxattr(path, name, value, size, flags);
+    double end = MPI_Wtime();
+    md_record_timing(start, end);
     return rc;
 }
 
