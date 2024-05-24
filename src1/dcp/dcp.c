@@ -19,8 +19,6 @@
 
 #include "mfu_errors.h"
 
-#include "timing.h"
-
 static int input_flist_skip(const char* name, void *args)
 {
     /* nothing to do if args are NULL */
@@ -122,8 +120,6 @@ int main(int argc, char** argv)
     /* get our rank */
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-    double starttime = MPI_Wtime();
 
     /* pointer to mfu_file src and dest objects */
     mfu_file_t* mfu_src_file = mfu_file_new();
@@ -586,35 +582,6 @@ daos_cleanup:
             MFU_LOG(MFU_LOG_ERR, "One or more errors were detected while copying: "
                     MFU_ERRF, MFU_ERRP(-MFU_ERR_DCP_COPY));
         }
-    }
-
-    double endtime = MPI_Wtime();
-    int size;
-
-    MPI_Comm_size(MPI_COMM_WORLD, &size);
-
-    double fastest_start;
-    double latest_end;
-    MPI_Reduce(&starttime, &fastest_start, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
-    MPI_Reduce(&endtime, &latest_end, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
-
-    double total_time = timing_info.total_time;
-    double sum_time;
-    MPI_Reduce(&total_time, &sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
-    double pread_total_time = pread_timing_info.total_time;
-    double pread_sum_time;
-    MPI_Reduce(&pread_total_time, &pread_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
-    double md_total_time = md_timing_info.total_time;
-    double md_sum_time;
-    MPI_Reduce(&md_total_time, &md_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
-
-    if (rank == 0) {
-        printf("check: longest time: %f seconds\n", latest_end - fastest_start);
-        printf("check: Avg io time: %f seconds\n", sum_time/size);
-        printf("check: Avg pread time: %f seconds\n", pread_sum_time/size);
-        printf("check: Avg metadata time: %f seconds\n", md_sum_time/size);
     }
 
     mfu_finalize();

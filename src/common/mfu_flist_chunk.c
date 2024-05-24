@@ -612,7 +612,7 @@ void mfu_file_chunk_list_lor(mfu_flist list, const mfu_file_chunk* head, const i
 
     /* get a count of how many items are the chunk list */
     uint64_t list_count = mfu_file_chunk_list_size(head);
-	printf("list_count: %d\n", list_count);
+	// printf("list_count: %d\n", list_count);
     /* keys are the filename, so only bytes that belong to 
  *      * the same file will be compared via a flag in the segmented scan */
     char* keys = (char*) MFU_MALLOC(list_count * max_name);
