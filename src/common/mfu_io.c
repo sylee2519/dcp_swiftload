@@ -60,11 +60,14 @@ int compare_stats(const struct stat* buf1, const struct stat* buf2) {
 
 void load_catalog_if_needed() {
     if (!catalog_loaded) {
+        double start = MPI_Wtime();
         const char* catalog_path = "catalog.txt"; // TODO: catalog path 설정
         catalog_entries = load_catalog(catalog_path, &catalog_entry_count);
         if (catalog_entries != NULL) {
             catalog_loaded = 1;
         }
+        double end = MPI_Wtime();
+        catalog_load_timing(start, end);
     }
 }
 
@@ -77,6 +80,7 @@ void load_catalog_dir_if_needed() {
 #ifdef DEBUG
         log_message("catalog not loaded\n");
 #endif
+        double start = MPI_Wtime();
         const char* catalog_path = "catalog_dir.txt"; // TODO: catalog path 설정
         FILE* file = fopen(catalog_path, "r");
         if (file == NULL) {
@@ -162,6 +166,8 @@ void load_catalog_dir_if_needed() {
             }
         }
 #endif
+        double end = MPI_Wtime();
+        catalog_load_timing(start, end);
     }
 }
 

@@ -22,3 +22,9 @@ void md_record_timing(double start, double end) {
     md_timing_info.total_time += duration;
     md_timing_info.count++;
 }
+
+void catalog_load_timing(double start, double end) {
+    double duration = end - start;
+    catalog_load_timing_info.total_time += duration;
+    catalog_load_timing_info.count++;
+}

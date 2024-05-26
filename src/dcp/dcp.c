@@ -612,6 +612,14 @@ daos_cleanup:
     double sum_md_count;
     MPI_Reduce(&md_count, &sum_md_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
+    double catalog_load_total_time = catalog_load_timing_info.total_time;
+    double catalog_load_sum_time;
+    MPI_Reduce(&catalog_load_total_time, &catalog_load_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+
+    double catalog_load_count = catalog_load_timing_info.count;
+    double sum_catalog_load_count;
+    MPI_Reduce(&catalog_load_count, &sum_catalog_load_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+
     if (rank == 0) {
         printf("check: exec time: %f seconds\n", endtime - starttime);
         printf("check: Avg io time: %f seconds\n", sum_time/size);
@@ -619,6 +627,8 @@ daos_cleanup:
         printf("check: total pread count: %f\n", sum_pread_count);
         printf("check: Avg metadata time: %f seconds\n", md_sum_time/size);
         printf("check: total metadata count: %f\n", sum_md_count);
+        printf("check: Avg catalog load time: %f seconds\n", catalog_load_sum_time/size);
+        printf("check: total catalog load count: %f\n", sum_catalog_load_count);
     }
 
     mfu_finalize();
