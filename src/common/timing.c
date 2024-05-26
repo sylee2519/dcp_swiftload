@@ -4,6 +4,7 @@
 timing_info_t timing_info = {0.0, 0};
 timing_info_t pread_timing_info = {0.0, 0};
 timing_info_t md_timing_info = {0.0, 0};
+timing_info_t catalog_load_timing_info = {0.0, 0};
 
 void record_timing(double start, double end) {
     double duration = end - start;
