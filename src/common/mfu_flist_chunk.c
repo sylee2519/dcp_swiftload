@@ -75,9 +75,6 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     if (rank == 0) {
         offset = 0;
     }
-#ifdef DEBUG
-    printf("size : %d \n", size);
-#endif
     /* if we have some chunks, figure out the number of ranks
  *      * we'll send to and the range of rank ids, set flags to 1 */
 
