@@ -8,7 +8,6 @@
 #include "dtcmp.h"
 #include "mfu.h"
 
-#define CATALOG
 uint64_t num_tasks_per_ost[OST_NUMBER];
 
 /****************************************
@@ -60,8 +59,28 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     uint64_t count = 0;
     uint64_t idx;
     uint64_t size = mfu_flist_size(list);
+    for (idx = 0; idx < size; idx++) {
+        /* get type of item */
+        mfu_filetype type = mfu_flist_file_get_type(list, idx);
 
-//	printf("rank %d chunks: %d\n", rank, count);
+        /* if we have a file, add up its chunks */
+        if (type == MFU_TYPE_FILE) {
+            /* get size of file */
+            uint64_t file_size = mfu_flist_file_get_size(list, idx);
+
+            /* compute number of chunks to copy for this file */
+            uint64_t chunks = file_size / chunk_size;
+            if (chunks * chunk_size < file_size || file_size == 0) {
+                /* this accounts for the last chunk, which may be
+ *                  * partial or it adds a chunk for 0-size files */
+                chunks++;
+            }
+
+            /* include these chunks in our total */
+            count += chunks;
+        }
+    }
+	printf("rank %d chunks: %d\n", rank, count);
 
     /* compute total number of chunks across procs */
     uint64_t total;
@@ -75,7 +94,7 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
     if (rank == 0) {
         offset = 0;
     }
-    printf("size : %d \n", size);
+
     /* if we have some chunks, figure out the number of ranks
  *      * we'll send to and the range of rank ids, set flags to 1 */
 
@@ -99,121 +118,27 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
  *      * send to each task, as an optimization, we encode consecutive
  *           * chunks of the same file into a single unit */
  
-    uint64_t current_offset = offset;
+   uint64_t current_offset = offset;
     for (idx = 0; idx < size; idx++) {
         /* get type of item */
         mfu_filetype type = mfu_flist_file_get_type(list, idx);
 
 
-            printf("name %s\n", mfu_flist_file_get_name(list, idx));
         /* if we have a file, add up its chunks */
         if (type == MFU_TYPE_FILE) {
-
-            printf("file type \n");
             /* get size of file */
             uint64_t file_size = mfu_flist_file_get_size(list, idx);
 
-	        uint64_t chunks = file_size /chunk_size;
-	        uint64_t chunk_cnt = 0;
-            if (chunks * chunk_size < file_size || file_size == 0) {
+	uint64_t chunks = file_size /chunk_size;
+	uint64_t chunk_cnt = 0;
+        if (chunks * chunk_size < file_size || file_size == 0) {
                 chunks++;
             }
-            //	printf("rank %d idx %d # of chunks %d\n", rank, idx, chunks);
-
-            printf("catalod_loaded?  %d\n", catalog_loaded);
-#ifdef CATALOG
-            load_catalog_if_needed();
-            
-            printf("catalog failed to load\n");
-            if (catalog_loaded) {
-                printf("inside catalog loaded\n");        
-                printf("catalog entries %d\n", catalog_entries);        
-                printf("catalog entry count %d\n", catalog_entry_count);
-                printf("mfu_flist_file_get_name  %s\n", mfu_flist_file_get_name(list, idx));
-        
-                catalog_entry_t* entry = find_entry_in_catalog(catalog_entries, catalog_entry_count, mfu_flist_file_get_name(list,idx));   
-                if (entry!= NULL){
-                    
-                printf("inside entry not null\n");        
-                    obj_task* task = entry->layout;
-                    for(int i = 0; i < entry->task_num; i++){
-
-                printf("for loop\n");        
-                        uint64_t offset = task->start;
-                        uint64_t end = task->end;
-                        while( offset < end){
-
-                            printf("inside while\n");        
-                            mfu_file_chunk* elem = (mfu_file_chunk*) MFU_MALLOC(sizeof(mfu_file_chunk));
-                            elem->name             = mfu_flist_file_get_name(list, idx);
-                            elem->offset           = offset;
-                            elem->file_size        = file_size;
-                            elem->ost              = task->ost_idx;
-                            elem->rank_of_owner    = rank;
-                            elem->index_of_owner   = idx;
-                            elem->next             = NULL;
-                            int task_ost = task->ost_idx;
-                            chunk_cnt++;
-                            if (file_size < chunk_size){
-                                elem -> length = file_size;
-                            } else if ((elem->offset + chunk_size) > file_size){
-                                elem-> length = file_size - elem->offset;
-                            } else{
-                                elem->length = chunk_size;
-                            }
-                            size_t pack_size = strlen(elem->name) + 1;
-                            pack_size += 6 * 8;
-                            int dest_rank, num_binded_worker;
-
-                            if (OST_NUMBER >= worker_number){
-                                dest_rank = task_ost % worker_number;
-                            } else{
-                                int remainder = task_ost < (worker_number % OST_NUMBER) ? 1 : 0;
-                                num_binded_worker = worker_number / OST_NUMBER + remainder;
-                                dest_rank = (num_tasks_per_ost[task_ost] % num_binded_worker) * OST_NUMBER + task_ost;
-                                num_tasks_per_ost[task_ost]++;
-                            }
-                            if (dest_rank == rank){
-
-                                mfu_file_chunk* p = malloc(sizeof(mfu_file_chunk));
-                                p->next = NULL;
-                                p->name = strdup(elem->name);
-                                p->offset = offset;
-                                p->file_size = file_size;
-                                p->length = elem->length;
-                                p->ost = task_ost;
-                                p->rank_of_owner = rank;
-                                p->index_of_owner = idx;
-
-                                if(head == NULL)
-                                    head = p;
-                                if(tail != NULL)
-                                    tail->next = p;
-                                tail= p;
-                            } else{
-                                /* append element to list */
-                                if (heads[dest_rank] == NULL) {
-                                    heads[dest_rank] = elem;
-                                }
-                                if (tails[dest_rank] != NULL) {
-                                    tails[dest_rank]->next = elem;
-                                }
-                                tails[dest_rank] = elem;
-                                counts[dest_rank]++;
-                                bytes[dest_rank] += pack_size;
-                           }
-                           offset += task->stripe_size; 
-                        } //end of while
-                        task = task->next;
-       
-                    } //end of for 
-                } //end of if
-            } //end of if
-#else
+//	printf("rank %d idx %d # of chunks %d\n", rank, idx, chunks);
 
             layout = llapi_layout_get_by_path(mfu_flist_file_get_name(list, idx), 0);
-//		    printf("name: %s\n", mfu_flist_file_get_name(list, idx), 0); 
-            if (layout == NULL){
+//		printf("name: %s\n", mfu_flist_file_get_name(list, idx), 0); 
+           if (layout == NULL){
                 printf("errno: layout is NULL\n");
             }
             rc[0] = llapi_layout_comp_use(layout, 1);
@@ -221,109 +146,109 @@ mfu_file_chunk* mfu_file_chunk_list_alloc(mfu_flist list, uint64_t chunk_size)
                 printf("error: layout component iteration failed\n");
             }
             while (1){
-                rc[0] = llapi_layout_stripe_count_get(layout, &cnt);
-                rc[1] = llapi_layout_stripe_size_get(layout, &ssize);
-                rc[2] = llapi_layout_comp_extent_get(layout, &start, &end);
-                if (rc[0] || rc[1] || rc[2]){
-                    printf("error: cannot get stripe information\n");
-                    continue;
-                }
-//			    printf("cnt %d\n", cnt);
-                interval = cnt * ssize;
-//			    printf("interval %d\n", interval);
-                end = (end < file_size) ? end : file_size;
-                for (int i = 0; i < cnt; i++){
-                    rc[0] = llapi_layout_ost_index_get(layout, i, &ost_idx);
-                    if (rc[0]){
-                        goto here_exit;
-                    }
-			        int next_offset = 0;
-			        for(int j=0; next_offset <=end; j++){
-//			            printf("next_offset %d, rank: %d\n", next_offset, rank);
-			            int off = (start + i * ssize) + (j*interval);
-			            if(chunk_cnt >= chunks){
-				            goto here_exit;
-			            }
+                        rc[0] = llapi_layout_stripe_count_get(layout, &cnt);
+                        rc[1] = llapi_layout_stripe_size_get(layout, &ssize);
+                        rc[2] = llapi_layout_comp_extent_get(layout, &start, &end);
+                        if (rc[0] || rc[1] || rc[2]){
+                            printf("error: cannot get stripe information\n");
+                            continue;
+                    	}
+//			printf("cnt %d\n", cnt);
+                    interval = cnt * ssize;
+//			printf("interval %d\n", interval);
+                    end = (end < file_size) ? end : file_size;
+                    for (int i = 0; i < cnt; i++){
+                        rc[0] = llapi_layout_ost_index_get(layout, i, &ost_idx);
+                        if (rc[0]){
+                                goto here_exit;
+                        }
+			int next_offset = 0;
+			for(int j=0; next_offset <=end; j++){
+//			printf("next_offset %d, rank: %d\n", next_offset, rank);
+			int off = (start + i * ssize) + (j*interval);
+//			if(off >= file_size && file_size != 0){
+			if(chunk_cnt >= chunks){
+				goto here_exit;
+			}
                         mfu_file_chunk* elem = (mfu_file_chunk*) MFU_MALLOC(sizeof(mfu_file_chunk));
                         elem->name             = mfu_flist_file_get_name(list, idx);
                         elem->offset           = off;
-			            next_offset = (start+i*ssize)+((j+1)*interval);
+			next_offset = (start+i*ssize)+((j+1)*interval);
                         elem->file_size        = file_size;
-			            elem->ost	       = ost_idx;
+			elem->ost	       = ost_idx;
                         elem->rank_of_owner    = rank;
                         elem->index_of_owner   = idx;
                         elem->next             = NULL;
                         int task_ost = ost_idx;
-			            chunk_cnt++;
-			            if (file_size < chunk_size){
-				            elem -> length = file_size; 
-			            }
-			            else if ((elem->offset + chunk_size) > file_size){
-				            elem-> length = file_size - elem->offset;
-			            }
-			            else{
-				            elem->length = chunk_size;
-			            }
-//			            printf("file_size: %d, offset: %d\n", file_size, elem->offset); 
-//			            printf("length: %d\n", elem->length);
+			chunk_cnt++;
+			if (file_size < chunk_size){
+				elem -> length = file_size; 
+			}
+			else if ((elem->offset + chunk_size) > file_size){
+				elem-> length = file_size - elem->offset;
+			}
+			else{
+				elem->length = chunk_size;
+			}
+//			printf("file_size: %d, offset: %d\n", file_size, elem->offset); 
+//			printf("length: %d\n", elem->length);
                         size_t pack_size = strlen(elem->name) + 1;
                         pack_size += 6 * 8;
                         int dest_rank, num_binded_worker;
 
                         if (OST_NUMBER >= worker_number){
-                            dest_rank = task_ost % worker_number;
-//				            printf("task_ost: %d worker_num: %d dest_rank: %d\n", task_ost, worker_number, dest_rank);
-			            }
+                                dest_rank = task_ost % worker_number;
+//				printf("task_ost: %d worker_num: %d dest_rank: %d\n", task_ost, worker_number, dest_rank);
+			}
                         else{
-                            int remainder = task_ost < (worker_number % OST_NUMBER) ? 1 : 0;
-                            num_binded_worker = worker_number / OST_NUMBER + remainder;
-                            dest_rank = (num_tasks_per_ost[task_ost] % num_binded_worker) * OST_NUMBER + task_ost;
-                            num_tasks_per_ost[task_ost]++;
+                                int remainder = task_ost < (worker_number % OST_NUMBER) ? 1 : 0;
+                                num_binded_worker = worker_number / OST_NUMBER + remainder;
+                                dest_rank = (num_tasks_per_ost[task_ost] % num_binded_worker) * OST_NUMBER + task_ost;
+                                num_tasks_per_ost[task_ost]++;
                         }
-			            if (dest_rank == rank){
+			if (dest_rank == rank){
 				
-				            mfu_file_chunk* p = malloc(sizeof(mfu_file_chunk));
-				            p->next = NULL;
-				            p->name = strdup(elem->name);
-				            p->offset = off;
-				            p->file_size = file_size;
-				            p->length = elem->length;
-				            p->ost = ost_idx;
-				            p->rank_of_owner = rank;
-				            p->index_of_owner = idx;			
+				mfu_file_chunk* p = malloc(sizeof(mfu_file_chunk));
+				p->next = NULL;
+				p->name = strdup(elem->name);
+				p->offset = off;
+				p->file_size = file_size;
+				p->length = elem->length;
+				p->ost = ost_idx;
+				p->rank_of_owner = rank;
+				p->index_of_owner = idx;			
 				
-				            if(head == NULL)
-					            head = p;
-				            if(tail != NULL)
-					            tail->next = p;
-				            tail= p;
-			            }
-			            else{
-                            /* append element to list */
-                            if (heads[dest_rank] == NULL) {
-                                heads[dest_rank] = elem;
-                            }
-                            if (tails[dest_rank] != NULL) {
-                                tails[dest_rank]->next = elem;
-                            } 
-                            tails[dest_rank] = elem;
-                            counts[dest_rank]++;
-                            bytes[dest_rank] += pack_size;
-			            }
-			        } //end of inner for
-                } //end of for 
-                rc[0] = llapi_layout_comp_use(layout, 3);
-                if (rc[0] == 0)
-                    continue;
-                if (rc[0] < 0)
-                    printf("error: layout component iteration failed\n");
-                break;
-            } //end of while
-            here_exit:
-			    ;		
-#endif
-        } //if
-    } //for
+				if(head == NULL)
+					head = p;
+				if(tail != NULL)
+					tail->next = p;
+				tail= p;
+			}
+			else{
+                        /* append element to list */
+                        if (heads[dest_rank] == NULL) {
+                            heads[dest_rank] = elem;
+                        }
+                        if (tails[dest_rank] != NULL) {
+                            tails[dest_rank]->next = elem;
+                       	} 
+                        tails[dest_rank] = elem;
+                        counts[dest_rank]++;
+                        bytes[dest_rank] += pack_size;
+			}
+			} //end of inner for
+                    } //end of for 
+                   rc[0] = llapi_layout_comp_use(layout, 3);
+                    if (rc[0] == 0)
+                        continue;
+                    if (rc[0] < 0)
+                        printf("error: layout component iteration failed\n");
+                        break;
+                } //end of while
+                here_exit:
+			;		
+        }
+    }
 
     /* create storage to hold byte counts that we'll send
  *  *      * and receive, it would be best to use uint64_t here

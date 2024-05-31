@@ -472,6 +472,10 @@ static void walk_stat_process_dir(char* dir, CIRCLE_handle* handle)
     mfu_file_t* mfu_file = *CURRENT_PFILE;
     DIR* dirp = mfu_file_opendir(dir, mfu_file);
 
+ int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+
     if (! dirp) {
         MFU_LOG(MFU_LOG_ERR, "Failed to open directory with opendir: '%s' (errno=%d %s)",
                 dir, errno, strerror(errno));

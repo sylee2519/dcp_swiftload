@@ -2100,6 +2100,8 @@ static int mfu_copy_file(
     return ret;
 }
 
+
+
 /* slices files in list at boundaries of chunk size, evenly distributes
  * chunks, and copies data from source to destination file,
  * returns 0 on success and -1 on error */
@@ -2159,6 +2161,7 @@ static int mfu_copy_files(
      * this evenly spreads the file sections across processes */
     mfu_file_chunk* head = mfu_file_chunk_list_alloc(list, copy_opts->chunk_size);
 
+
     /* get a count of how many items are the chunk list */
     uint64_t list_count = mfu_file_chunk_list_size(head);
     /* allocate a flag for each element in chunk list,
@@ -2213,34 +2216,42 @@ static int mfu_copy_files(
     MPI_Barrier(MPI_COMM_WORLD);
 
     /* allocate a flag for each item in our file list */
-    int* results = (int*) MFU_MALLOC(size * sizeof(int));
+//    int* results = (int*) MFU_MALLOC(size * sizeof(int));
+    int* results = (int*) MFU_MALLOC(list_count * sizeof(int));
 
     /* intialize values, since not every item is represented
      * in chunk list */
-    for (i = 0; i < size; i++) {
+//    for (i = 0; i < size; i++) {
+    for (i = 0; i < list_count; i++) {
         results[i] = 0;
     }
 
     /* determnie which files were copied correctly */
-    mfu_file_chunk_list_lor(list, head, vals, results);
+//    mfu_file_chunk_list_lor(list, head, vals, results);
 	
 
     /* delete any destination file that failed to copy */
 
-    for (i = 0; i < size; i++) {
+//    for (i = 0; i < size; i++) {
+/*
+    for (i = 0; i < list_count; i++) {
         if (results[i] != 0) {
+		printf("found!\n");
+*/
             /* found a file that had an error during copy,
              * compute destination name and delete it */
+/*
             const char* name = mfu_flist_file_get_name(list, i);
             const char* dest = mfu_param_path_copy_dest(name, numpaths,
                 paths, destpath, copy_opts, mfu_src_file, mfu_dst_file);
             if (dest != NULL) {
+*/
                 /* sanity check to ensure we don't * delete the source file */
-                if (strcmp(dest, name) != 0) {
+/*                if (strcmp(dest, name) != 0) {
                     MFU_LOG(MFU_LOG_ERR, "Failed to copy `%s' to `%s'", name, dest);
                     rc = -1;
 #if 0
-                    /* delete destination file */
+                   // delete destination file 
                     int unlink_rc = mfu_file_unlink(dest, mfu_dst_file);
                     if (unlink_rc != 0) {
                         MFU_LOG(MFU_LOG_ERR, "Failed to unlink `%s' (errno=%d %s)",
@@ -2249,25 +2260,23 @@ static int mfu_copy_files(
                     }
 #endif
                 }
-
+*/
                 /* free destination name */
-                mfu_free(&dest);
+/*                mfu_free(&dest);
             }
         }
     }
-
+*/
     /* free the list of success/fail for each chunk */
-    mfu_free(&vals);
+
+
+//   mfu_free(&vals);
     /* free copy flags */
     mfu_free(&results);
 
-	printf("second free\n");
-//   MPI_Barrier(MPI_COMM_WORLD);
     /* free the list of file chunks */
-//    mfu_file_chunk_list_free(&head);
+    mfu_file_chunk_list_free(&head);
 
-	printf("third free\n");
-//    MPI_Barrier(MPI_COMM_WORLD);
     /* finalize progress messages for the copy */
     mfu_progress_complete(&copy_count, &copy_prog);
 
@@ -2502,7 +2511,6 @@ int mfu_flist_copy(
 
     /* operate on files in batches if batch size is given */
     uint64_t batch_size = copy_opts->batch_files;
-	printf("batch size %d\n", batch_size);
     if (batch_size > 0) {
         /* operate in batches, get total size of list, our global
          * offset within it, and the local size of our list to
@@ -2670,7 +2678,6 @@ int mfu_flist_copy(
         mfu_sync_all("Syncing directory updates to disk.");
     } else {
         /* user does not want to batch files, so copy the whole list */
-	printf("else right?\n");
         /* create files and links */
         tmp_rc = mfu_create_files(levels, minlevel, lists, numpaths,
                 paths, destpath, copy_opts, mfu_src_file, mfu_dst_file);

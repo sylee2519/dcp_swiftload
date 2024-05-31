@@ -90,6 +90,20 @@ extern "C" {
  * Define types
  ***************************************/
 
+
+typedef struct obj_task {
+    int ost_idx;
+    char path[4096];
+    uint64_t start;
+    uint64_t end;
+    uint64_t interval;
+    uint64_t stripe_size;
+    uint64_t file_size;
+    struct obj_task* next;
+} obj_task;
+
+
+
 /* TODO: these types may be encoded in files,
  * so changing their values can break backwards compatibility
  * in reading any such files */
