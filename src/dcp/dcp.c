@@ -588,47 +588,79 @@ daos_cleanup:
     }
 
     double endtime = MPI_Wtime();
-    int size;
+    int size, rank;
 
     MPI_Comm_size(MPI_COMM_WORLD, &size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
     double total_time = timing_info.total_time;
-    double sum_time;
+    double sum_time, max_time, min_time;
     MPI_Reduce(&total_time, &sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&total_time, &max_time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&total_time, &min_time, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double pread_total_time = pread_timing_info.total_time;
-    double pread_sum_time;
+    double pread_sum_time, pread_max_time, pread_min_time;
     MPI_Reduce(&pread_total_time, &pread_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&pread_total_time, &pread_max_time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&pread_total_time, &pread_min_time, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double pread_count = pread_timing_info.count;
-    double sum_pread_count;
+    double sum_pread_count, max_pread_count, min_pread_count;
     MPI_Reduce(&pread_count, &sum_pread_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&pread_count, &max_pread_count, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&pread_count, &min_pread_count, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double md_total_time = md_timing_info.total_time;
-    double md_sum_time;
+    double md_sum_time, md_max_time, md_min_time;
     MPI_Reduce(&md_total_time, &md_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&md_total_time, &md_max_time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&md_total_time, &md_min_time, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double md_count = md_timing_info.count;
-    double sum_md_count;
+    double sum_md_count, max_md_count, min_md_count;
     MPI_Reduce(&md_count, &sum_md_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&md_count, &max_md_count, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&md_count, &min_md_count, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double catalog_load_total_time = catalog_load_timing_info.total_time;
-    double catalog_load_sum_time;
+    double catalog_load_sum_time, catalog_load_max_time, catalog_load_min_time;
     MPI_Reduce(&catalog_load_total_time, &catalog_load_sum_time, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&catalog_load_total_time, &catalog_load_max_time, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&catalog_load_total_time, &catalog_load_min_time, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     double catalog_load_count = catalog_load_timing_info.count;
-    double sum_catalog_load_count;
+    double sum_catalog_load_count, max_catalog_load_count, min_catalog_load_count;
     MPI_Reduce(&catalog_load_count, &sum_catalog_load_count, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&catalog_load_count, &max_catalog_load_count, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+    MPI_Reduce(&catalog_load_count, &min_catalog_load_count, 1, MPI_DOUBLE, MPI_MIN, 0, MPI_COMM_WORLD);
 
     if (rank == 0) {
         printf("check: exec time: %f seconds\n", endtime - starttime);
-        printf("check: Avg io time: %f seconds\n", sum_time/size);
-        printf("check: Avg pread time: %f seconds\n", pread_sum_time/size);
+        printf("check: Avg io time: %f seconds\n", sum_time / size);
+        printf("check: Max io time: %f seconds\n", max_time);
+        printf("check: Min io time: %f seconds\n", min_time);
+
+        printf("check: Avg pread time: %f seconds\n", pread_sum_time / size);
+        printf("check: Max pread time: %f seconds\n", pread_max_time);
+        printf("check: Min pread time: %f seconds\n", pread_min_time);
         printf("check: total pread count: %f\n", sum_pread_count);
-        printf("check: Avg metadata time: %f seconds\n", md_sum_time/size);
+        printf("check: Max pread count: %f\n", max_pread_count);
+        printf("check: Min pread count: %f\n", min_pread_count);
+
+        printf("check: Avg metadata time: %f seconds\n", md_sum_time / size);
+        printf("check: Max metadata time: %f seconds\n", md_max_time);
+        printf("check: Min metadata time: %f seconds\n", md_min_time);
         printf("check: total metadata count: %f\n", sum_md_count);
-        printf("check: Avg catalog load time: %f seconds\n", catalog_load_sum_time/size);
+        printf("check: Max metadata count: %f\n", max_md_count);
+        printf("check: Min metadata count: %f\n", min_md_count);
+
+        printf("check: Avg catalog load time: %f seconds\n", catalog_load_sum_time / size);
+        printf("check: Max catalog load time: %f seconds\n", catalog_load_max_time);
+        printf("check: Min catalog load time: %f seconds\n", catalog_load_min_time);
         printf("check: total catalog load count: %f\n", sum_catalog_load_count);
+        printf("check: Max catalog load count: %f\n", max_catalog_load_count);
+        printf("check: Min catalog load count: %f\n", min_catalog_load_count);
     }
 
     mfu_finalize();
